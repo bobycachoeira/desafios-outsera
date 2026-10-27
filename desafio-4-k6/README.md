@@ -119,6 +119,9 @@ Os relatórios (`console.log`, `metadata.txt`, `summary.json` e `summary.html`) 
 para servir de evidência. `metrics.csv` e `raw.json.gz` ficam apenas locais por causa do tamanho
 gerado em execuções com 500 VUs.
 
+O relatório executivo em PDF da execução do desafio está em
+`results/20261027-201156-challenge/Relatorio-Teste-de-Carga-k6-Outsera.pdf`.
+
 ## Validando scripts sem rodar carga
 
 ```bash

@@ -17,6 +17,3 @@ results/*
 !results/*/summary.html
 results/*/metrics.csv
 results/*/raw.json.gz
-
-# Relatórios em PDF entram no Git somente após aprovação.
-results/*/*.pdf
