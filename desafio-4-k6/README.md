@@ -161,6 +161,16 @@ Ou rode o k6 dentro do Compose:
 docker compose --profile run up k6
 ```
 
+### k6 no CI/CD
+
+O workflow do GitHub Actions executa o k6 **sem** `--influx`. O runner não tem acesso ao
+Grafana/InfluxDB local (`localhost:3000` e `localhost:8086`), então a execução no pipeline não
+envia métricas para nenhum Grafana. Nesse ambiente, os relatórios são publicados como artifacts
+do workflow: `console.log`, `metadata.txt`, `summary.json` e `summary.html`.
+
+O `--influx` continua sendo exclusivo para execuções locais, onde a stack do Docker Compose está
+disponível.
+
 ## Perfis e thresholds
 
 | Perfil | Executor | Objetivo |

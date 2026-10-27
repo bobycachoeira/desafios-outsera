@@ -30,6 +30,13 @@ Os relatórios são publicados como artifacts de cada execução:
 - E2E: `e2e-report`
 - k6: `k6-report-<perfil>`
 
+## k6 e Grafana
+
+O k6 roda no CI sem a flag `--influx`. O runner do GitHub não tem acesso ao Grafana/InfluxDB
+local (`localhost:3000` e `localhost:8086`), então o pipeline não envia métricas para nenhum
+Grafana. A observabilidade com Grafana é uma stack local, usada apenas durante a execução na
+máquina de desenvolvimento. No CI, a evidência fica nos arquivos publicados como artifact.
+
 ## Pré-requisitos
 
 - `package-lock.json` nos projetos 1 e 2 (usados pelo `npm ci`).
