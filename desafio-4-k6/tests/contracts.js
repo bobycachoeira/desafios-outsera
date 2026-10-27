@@ -1,6 +1,7 @@
 import { check } from 'k6';
 import * as metrics from '../lib/metrics/index.js';
 import challengeDefault, * as challenge from '../scenarios/challenge.js';
+import ciDefault, * as ci from '../scenarios/ci.js';
 import dynamicDefault, * as dynamic from '../scenarios/dynamic.js';
 import loadDefault, * as load from '../scenarios/load.js';
 import smokeDefault, * as smoke from '../scenarios/smoke.js';
@@ -15,6 +16,7 @@ export const options = {
 
 const modules = [
   { label: 'challenge', ns: challenge, def: challengeDefault },
+  { label: 'ci', ns: ci, def: ciDefault },
   { label: 'dynamic', ns: dynamic, def: dynamicDefault },
   { label: 'load', ns: load, def: loadDefault },
   { label: 'smoke', ns: smoke, def: smokeDefault },

@@ -55,6 +55,7 @@ Uso: ./scripts/run.sh [perfil] [flags]
 
 Perfis:
   smoke    1 VU por 10s — validação rápida
+  ci       15 VUs por 30s — perfil leve para pipeline
   load     taxa de chegada com rampa (~2min)
   challenge 500 VUs por 5min — demanda do desafio Outsera
   stress   VUs em rampa crescente até o limite
@@ -73,6 +74,7 @@ Variáveis principais:
 
 Exemplos:
   ./scripts/run.sh smoke
+  ./scripts/run.sh ci
   ./scripts/run.sh load --influx
   ./scripts/run.sh challenge --influx
   BASE_URL=https://staging.exemplo.com ./scripts/run.sh smoke
@@ -88,7 +90,7 @@ fi
 
 if [ ! -f "scenarios/${PROFILE}.js" ]; then
   echo "Perfil inválido: \"${PROFILE}\""
-  echo "Disponíveis: smoke, load, challenge, stress, spike, dynamic"
+  echo "Disponíveis: smoke, ci, load, challenge, stress, spike, dynamic"
   echo "Uso: ./scripts/run.sh <perfil> [--influx] [--logs-json] (-h para ajuda completa)"
   exit 1
 fi

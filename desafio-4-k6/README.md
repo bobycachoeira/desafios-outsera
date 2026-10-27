@@ -16,7 +16,7 @@ com opção de dashboards em tempo real via Grafana + InfluxDB.
 ## Estrutura
 
 ```text
-config/       Perfis de execução (smoke/load/stress/spike/dynamic), thresholds e variáveis de ambiente
+config/       Perfis de execução (smoke/ci/load/challenge/stress/spike/dynamic), thresholds e variáveis de ambiente
 lib/          Cliente HTTP, checks, jornadas e relatório HTML; lib/metrics/ — métricas por jornada
 scenarios/    Arquivos executáveis pelo k6 (um por perfil)
 scripts/      run.sh — orquestra a execução e guarda todos os resultados; check.sh — valida sem carga
@@ -63,6 +63,7 @@ Para criar uma nova — por exemplo, um fluxo que combina leitura e escrita de o
 ./scripts/run.sh smoke
 
 # Perfis disponíveis
+./scripts/run.sh ci         # 15 VUs por 30s (perfil leve do pipeline)
 ./scripts/run.sh load       # carga constante com rampa
 ./scripts/run.sh challenge  # 500 VUs por 5min (desafio Outsera)
 ./scripts/run.sh stress     # pressão crescente até o limite
@@ -176,6 +177,7 @@ disponível.
 | Perfil | Executor | Objetivo |
 |---|---|---|
 | `smoke` | 1 VU por 10s | Validar que o script e o alvo funcionam (executa `getJourney` + `createJourney` em sequência no mesmo VU) |
+| `ci` | 15 VUs por 30s | Perfil leve para o pipeline, sem sobrecarregar API pública |
 | `load` | Arrival rate com rampa | Comportamento sob carga esperada |
 | `challenge` | 500 VUs fixos por 5min | Carga sustentada do desafio Outsera |
 | `stress` | VUs com rampa crescente | Encontrar o limite do sistema |
@@ -302,8 +304,12 @@ recorder nos passos da jornada. Passo a passo em `agents/criar-jornada.md`.
 
 ## CI
 
-O workflow `.github/workflows/k6-smoke.yml` roda `./scripts/check.sh` (validações sem carga) e o
-perfil `smoke` a cada push/PR, publicando a pasta `results/` como artefato.
+O workflow `.github/workflows/k6-load.yml` roda `./scripts/check.sh` (validações sem carga) e o
+perfil `ci` (15 VUs por 30s) a cada push/PR. Na execução manual é possível escolher `smoke`,
+`load` ou `challenge`. Os relatórios são publicados como artifacts do workflow.
+
+O perfil `ci` existe para validar o pipeline sem gerar carga relevante contra a API pública. O
+teste completo do desafio (`challenge`) continua sendo executado manualmente.
 
 ## Uso com IA (agentes)
 

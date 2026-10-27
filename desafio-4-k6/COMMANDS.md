@@ -30,6 +30,7 @@ k6 inspect scenarios/smoke.js       # inspeciona as opções geradas por um perf
 
 ```bash
 ./scripts/run.sh smoke     # 1 VU por 10s — valida que script e alvo funcionam
+./scripts/run.sh ci        # 15 VUs por 30s — perfil leve usado no pipeline
 ./scripts/run.sh load      # taxa de chegada com rampa — comportamento sob carga esperada
 ./scripts/run.sh challenge # 500 VUs por 5min — carga do desafio Outsera
 ./scripts/run.sh stress    # VUs em rampa crescente — encontra o limite do sistema
@@ -205,7 +206,7 @@ cat AGENTS.md                  # contexto para agentes de IA (arquitetura e inva
 ## 10. CI (GitHub Actions)
 
 ```bash
-gh run list        # histórico das execuções (check + smoke a cada push/PR)
+gh run list        # histórico das execuções (check + ci a cada push/PR)
 gh run watch       # acompanha a execução mais recente
 gh run view        # detalhes da última execução
 ```

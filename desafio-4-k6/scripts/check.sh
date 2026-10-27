@@ -74,7 +74,7 @@ expect_fail() {
 }
 
 echo "== 1. Parse e opções de cada perfil (k6 inspect) =="
-for f in smoke load challenge stress spike dynamic; do
+for f in smoke ci load challenge stress spike dynamic; do
   if k6 inspect "scenarios/$f.js" >/dev/null 2>&1; then
     ok "scenarios/$f.js compila e gera opções"
   else
@@ -83,7 +83,7 @@ for f in smoke load challenge stress spike dynamic; do
 done
 
 echo "== 2. Thresholds obrigatórios em todos os perfis =="
-for f in smoke load challenge stress spike dynamic; do
+for f in smoke ci load challenge stress spike dynamic; do
   if thresholds_ok "scenarios/$f.js"; then
     ok "scenarios/$f.js define thresholds obrigatórios"
   else

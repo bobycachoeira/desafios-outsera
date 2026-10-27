@@ -16,6 +16,12 @@ export const profiles = {
     duration: '10s',
     tags: { profile: 'smoke' },
   },
+  ci: {
+    executor: 'constant-vus',
+    vus: 15,
+    duration: '30s',
+    tags: { profile: 'ci' },
+  },
   load: {
     executor: 'ramping-arrival-rate',
     startRate: 5,

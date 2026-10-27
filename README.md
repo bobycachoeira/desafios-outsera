@@ -25,9 +25,10 @@ alterados:
 └── k6-load.yml
 ```
 
-O k6 roda `smoke` em push/PR e permite escolher `load` ou `challenge` na execução manual.
-Os relatórios são publicados como artifacts de cada workflow. O pipeline do k6 não envia
-métricas para o Grafana: a stack `docker compose` é local e não existe no runner do GitHub.
+O k6 roda `ci` (15 VUs por 30s) em push/PR e permite escolher `smoke`, `load` ou `challenge` na
+execução manual. Os relatórios são publicados como artifacts de cada workflow. O pipeline do k6
+não envia métricas para o Grafana: a stack `docker compose` é local e não existe no runner do
+GitHub.
 
 ## Como usar
 

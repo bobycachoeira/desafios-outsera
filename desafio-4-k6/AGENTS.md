@@ -8,7 +8,7 @@ Leia antes de alterar qualquer coisa.
 
 | Caminho | Papel |
 |---|---|
-| `config/options.js` | Perfis (smoke/load/stress/spike), thresholds e `buildOptions(profile)` |
+| `config/options.js` | Perfis (smoke/ci/load/challenge/stress/spike), thresholds e `buildOptions(profile)` |
 | `config/dynamic.js` | Perfil `dynamic`: jornadas como cenários independentes, taxa por RPS via env |
 | `config/env.js` | `BASE_URL`, `RESULTS_DIR`, tags |
 | `lib/journey.js` | Jornadas (fluxos de negócio): `getJourney`, `createJourney`, `fullJourney` |

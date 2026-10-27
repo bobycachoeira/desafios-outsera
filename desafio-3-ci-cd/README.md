@@ -19,8 +19,8 @@ Cada workflow usa `working-directory` apontando para a pasta do projeto correspo
 
 - `push` na `main` e `pull_request`: executa apenas quando arquivos do projeto mudam (`paths`).
 - `workflow_dispatch`: execução manual.
-- `k6-load.yml`: por padrão roda `smoke`; o perfil `challenge` (500 VUs por 5 min) deve ser
-  escolhido manualmente para não impactar todo commit.
+- `k6-load.yml`: por padrão roda `ci` (15 VUs por 30s); `smoke`, `load` e `challenge` (500 VUs
+  por 5 min) podem ser escolhidos manualmente para não impactar todo commit.
 
 ## Relatórios
 
