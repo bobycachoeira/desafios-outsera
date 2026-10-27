@@ -1,0 +1,977 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: scenarios/challenge.js
+        output: json (results/20261027-201156-challenge/raw.json.gz), csv (results/20261027-201156-challenge/metrics.csv), InfluxDBv1 (http://localhost:8086)
+
+     scenarios: (100.00%) 1 scenario, 500 max VUs, 5m30s max duration (incl. graceful stop):
+              * challenge: 500 looping VUs for 5m0s (gracefulStop: 30s)
+
+
+running (0m00.9s), 500/500 VUs, 0 complete and 0 interrupted iterations
+challenge   [   0% ] 500 VUs  0m00.9s/5m0s
+
+running (0m01.9s), 500/500 VUs, 0 complete and 0 interrupted iterations
+challenge   [   1% ] 500 VUs  0m01.9s/5m0s
+
+running (0m02.9s), 500/500 VUs, 107 complete and 0 interrupted iterations
+challenge   [   1% ] 500 VUs  0m02.9s/5m0s
+
+running (0m03.9s), 500/500 VUs, 335 complete and 0 interrupted iterations
+challenge   [   1% ] 500 VUs  0m03.9s/5m0s
+
+running (0m04.9s), 500/500 VUs, 550 complete and 0 interrupted iterations
+challenge   [   2% ] 500 VUs  0m04.9s/5m0s
+
+running (0m05.9s), 500/500 VUs, 761 complete and 0 interrupted iterations
+challenge   [   2% ] 500 VUs  0m05.9s/5m0s
+
+running (0m06.9s), 500/500 VUs, 989 complete and 0 interrupted iterations
+challenge   [   2% ] 500 VUs  0m06.9s/5m0s
+
+running (0m07.9s), 500/500 VUs, 1179 complete and 0 interrupted iterations
+challenge   [   3% ] 500 VUs  0m07.9s/5m0s
+
+running (0m08.9s), 500/500 VUs, 1421 complete and 0 interrupted iterations
+challenge   [   3% ] 500 VUs  0m08.9s/5m0s
+
+running (0m09.9s), 500/500 VUs, 1625 complete and 0 interrupted iterations
+challenge   [   3% ] 500 VUs  0m09.9s/5m0s
+
+running (0m10.9s), 500/500 VUs, 1838 complete and 0 interrupted iterations
+challenge   [   4% ] 500 VUs  0m10.9s/5m0s
+
+running (0m11.9s), 500/500 VUs, 2051 complete and 0 interrupted iterations
+challenge   [   4% ] 500 VUs  0m11.9s/5m0s
+
+running (0m12.9s), 500/500 VUs, 2272 complete and 0 interrupted iterations
+challenge   [   4% ] 500 VUs  0m12.9s/5m0s
+
+running (0m13.9s), 500/500 VUs, 2474 complete and 0 interrupted iterations
+challenge   [   5% ] 500 VUs  0m13.9s/5m0s
+
+running (0m14.9s), 500/500 VUs, 2695 complete and 0 interrupted iterations
+challenge   [   5% ] 500 VUs  0m14.9s/5m0s
+
+running (0m15.9s), 500/500 VUs, 2915 complete and 0 interrupted iterations
+challenge   [   5% ] 500 VUs  0m15.9s/5m0s
+
+running (0m16.9s), 500/500 VUs, 3133 complete and 0 interrupted iterations
+challenge   [   6% ] 500 VUs  0m16.9s/5m0s
+
+running (0m17.9s), 500/500 VUs, 3327 complete and 0 interrupted iterations
+challenge   [   6% ] 500 VUs  0m17.9s/5m0s
+
+running (0m18.9s), 500/500 VUs, 3562 complete and 0 interrupted iterations
+challenge   [   6% ] 500 VUs  0m18.9s/5m0s
+
+running (0m19.9s), 500/500 VUs, 3765 complete and 0 interrupted iterations
+challenge   [   7% ] 500 VUs  0m19.9s/5m0s
+
+running (0m20.9s), 500/500 VUs, 3980 complete and 0 interrupted iterations
+challenge   [   7% ] 500 VUs  0m20.9s/5m0s
+
+running (0m21.9s), 500/500 VUs, 4200 complete and 0 interrupted iterations
+challenge   [   7% ] 500 VUs  0m21.9s/5m0s
+
+running (0m22.9s), 500/500 VUs, 4419 complete and 0 interrupted iterations
+challenge   [   8% ] 500 VUs  0m22.9s/5m0s
+
+running (0m23.9s), 500/500 VUs, 4639 complete and 0 interrupted iterations
+challenge   [   8% ] 500 VUs  0m23.9s/5m0s
+
+running (0m24.9s), 500/500 VUs, 4841 complete and 0 interrupted iterations
+challenge   [   8% ] 500 VUs  0m24.9s/5m0s
+
+running (0m25.9s), 500/500 VUs, 5059 complete and 0 interrupted iterations
+challenge   [   9% ] 500 VUs  0m25.9s/5m0s
+
+running (0m26.9s), 500/500 VUs, 5270 complete and 0 interrupted iterations
+challenge   [   9% ] 500 VUs  0m26.9s/5m0s
+
+running (0m27.9s), 500/500 VUs, 5492 complete and 0 interrupted iterations
+challenge   [   9% ] 500 VUs  0m27.9s/5m0s
+
+running (0m28.9s), 500/500 VUs, 5690 complete and 0 interrupted iterations
+challenge   [  10% ] 500 VUs  0m28.9s/5m0s
+
+running (0m29.9s), 500/500 VUs, 5922 complete and 0 interrupted iterations
+challenge   [  10% ] 500 VUs  0m29.9s/5m0s
+
+running (0m30.9s), 500/500 VUs, 6128 complete and 0 interrupted iterations
+challenge   [  10% ] 500 VUs  0m30.9s/5m0s
+
+running (0m31.9s), 500/500 VUs, 6350 complete and 0 interrupted iterations
+challenge   [  11% ] 500 VUs  0m31.9s/5m0s
+
+running (0m32.9s), 500/500 VUs, 6560 complete and 0 interrupted iterations
+challenge   [  11% ] 500 VUs  0m32.9s/5m0s
+
+running (0m33.9s), 500/500 VUs, 6771 complete and 0 interrupted iterations
+challenge   [  11% ] 500 VUs  0m33.9s/5m0s
+
+running (0m34.9s), 500/500 VUs, 6983 complete and 0 interrupted iterations
+challenge   [  12% ] 500 VUs  0m34.9s/5m0s
+
+running (0m35.9s), 500/500 VUs, 7194 complete and 0 interrupted iterations
+challenge   [  12% ] 500 VUs  0m35.9s/5m0s
+
+running (0m36.9s), 500/500 VUs, 7413 complete and 0 interrupted iterations
+challenge   [  12% ] 500 VUs  0m36.9s/5m0s
+
+running (0m37.9s), 500/500 VUs, 7611 complete and 0 interrupted iterations
+challenge   [  13% ] 500 VUs  0m37.9s/5m0s
+
+running (0m38.9s), 500/500 VUs, 7834 complete and 0 interrupted iterations
+challenge   [  13% ] 500 VUs  0m38.9s/5m0s
+
+running (0m39.9s), 500/500 VUs, 8052 complete and 0 interrupted iterations
+challenge   [  13% ] 500 VUs  0m39.9s/5m0s
+
+running (0m40.9s), 500/500 VUs, 8241 complete and 0 interrupted iterations
+challenge   [  14% ] 500 VUs  0m40.9s/5m0s
+
+running (0m41.9s), 500/500 VUs, 8465 complete and 0 interrupted iterations
+challenge   [  14% ] 500 VUs  0m41.9s/5m0s
+
+running (0m42.9s), 500/500 VUs, 8688 complete and 0 interrupted iterations
+challenge   [  14% ] 500 VUs  0m42.9s/5m0s
+
+running (0m43.9s), 500/500 VUs, 8903 complete and 0 interrupted iterations
+challenge   [  15% ] 500 VUs  0m43.9s/5m0s
+
+running (0m44.9s), 500/500 VUs, 9124 complete and 0 interrupted iterations
+challenge   [  15% ] 500 VUs  0m44.9s/5m0s
+
+running (0m45.9s), 500/500 VUs, 9343 complete and 0 interrupted iterations
+challenge   [  15% ] 500 VUs  0m45.9s/5m0s
+
+running (0m46.9s), 500/500 VUs, 9539 complete and 0 interrupted iterations
+challenge   [  16% ] 500 VUs  0m46.9s/5m0s
+
+running (0m47.9s), 500/500 VUs, 9769 complete and 0 interrupted iterations
+challenge   [  16% ] 500 VUs  0m47.9s/5m0s
+
+running (0m48.9s), 500/500 VUs, 9974 complete and 0 interrupted iterations
+challenge   [  16% ] 500 VUs  0m48.9s/5m0s
+
+running (0m49.9s), 500/500 VUs, 10191 complete and 0 interrupted iterations
+challenge   [  17% ] 500 VUs  0m49.9s/5m0s
+
+running (0m50.9s), 500/500 VUs, 10405 complete and 0 interrupted iterations
+challenge   [  17% ] 500 VUs  0m50.9s/5m0s
+
+running (0m51.9s), 500/500 VUs, 10618 complete and 0 interrupted iterations
+challenge   [  17% ] 500 VUs  0m51.9s/5m0s
+
+running (0m52.9s), 500/500 VUs, 10831 complete and 0 interrupted iterations
+challenge   [  18% ] 500 VUs  0m52.9s/5m0s
+
+running (0m53.9s), 500/500 VUs, 11039 complete and 0 interrupted iterations
+challenge   [  18% ] 500 VUs  0m53.9s/5m0s
+
+running (0m54.9s), 500/500 VUs, 11251 complete and 0 interrupted iterations
+challenge   [  18% ] 500 VUs  0m54.9s/5m0s
+
+running (0m55.9s), 500/500 VUs, 11470 complete and 0 interrupted iterations
+challenge   [  19% ] 500 VUs  0m55.9s/5m0s
+
+running (0m56.9s), 500/500 VUs, 11689 complete and 0 interrupted iterations
+challenge   [  19% ] 500 VUs  0m56.9s/5m0s
+
+running (0m57.9s), 500/500 VUs, 11888 complete and 0 interrupted iterations
+challenge   [  19% ] 500 VUs  0m57.9s/5m0s
+
+running (0m58.9s), 500/500 VUs, 12116 complete and 0 interrupted iterations
+challenge   [  20% ] 500 VUs  0m58.9s/5m0s
+
+running (0m59.9s), 500/500 VUs, 12318 complete and 0 interrupted iterations
+challenge   [  20% ] 500 VUs  0m59.9s/5m0s
+
+running (1m00.9s), 500/500 VUs, 12535 complete and 0 interrupted iterations
+challenge   [  20% ] 500 VUs  1m00.9s/5m0s
+
+running (1m01.9s), 500/500 VUs, 12764 complete and 0 interrupted iterations
+challenge   [  21% ] 500 VUs  1m01.9s/5m0s
+
+running (1m02.9s), 500/500 VUs, 12971 complete and 0 interrupted iterations
+challenge   [  21% ] 500 VUs  1m02.9s/5m0s
+
+running (1m03.9s), 500/500 VUs, 13199 complete and 0 interrupted iterations
+challenge   [  21% ] 500 VUs  1m03.9s/5m0s
+
+running (1m04.9s), 500/500 VUs, 13395 complete and 0 interrupted iterations
+challenge   [  22% ] 500 VUs  1m04.9s/5m0s
+
+running (1m05.9s), 500/500 VUs, 13600 complete and 0 interrupted iterations
+challenge   [  22% ] 500 VUs  1m05.9s/5m0s
+
+running (1m06.9s), 500/500 VUs, 13844 complete and 0 interrupted iterations
+challenge   [  22% ] 500 VUs  1m06.9s/5m0s
+
+running (1m07.9s), 500/500 VUs, 14046 complete and 0 interrupted iterations
+challenge   [  23% ] 500 VUs  1m07.9s/5m0s
+
+running (1m08.9s), 500/500 VUs, 14253 complete and 0 interrupted iterations
+challenge   [  23% ] 500 VUs  1m08.9s/5m0s
+
+running (1m09.9s), 500/500 VUs, 14463 complete and 0 interrupted iterations
+challenge   [  23% ] 500 VUs  1m09.9s/5m0s
+
+running (1m10.9s), 500/500 VUs, 14686 complete and 0 interrupted iterations
+challenge   [  24% ] 500 VUs  1m10.9s/5m0s
+
+running (1m11.9s), 500/500 VUs, 14895 complete and 0 interrupted iterations
+challenge   [  24% ] 500 VUs  1m11.9s/5m0s
+
+running (1m12.9s), 500/500 VUs, 15106 complete and 0 interrupted iterations
+challenge   [  24% ] 500 VUs  1m12.9s/5m0s
+
+running (1m13.9s), 500/500 VUs, 15326 complete and 0 interrupted iterations
+challenge   [  25% ] 500 VUs  1m13.9s/5m0s
+
+running (1m14.9s), 500/500 VUs, 15536 complete and 0 interrupted iterations
+challenge   [  25% ] 500 VUs  1m14.9s/5m0s
+
+running (1m15.9s), 500/500 VUs, 15754 complete and 0 interrupted iterations
+challenge   [  25% ] 500 VUs  1m15.9s/5m0s
+
+running (1m16.9s), 500/500 VUs, 15967 complete and 0 interrupted iterations
+challenge   [  26% ] 500 VUs  1m16.9s/5m0s
+
+running (1m17.9s), 500/500 VUs, 16184 complete and 0 interrupted iterations
+challenge   [  26% ] 500 VUs  1m17.9s/5m0s
+
+running (1m18.9s), 500/500 VUs, 16409 complete and 0 interrupted iterations
+challenge   [  26% ] 500 VUs  1m18.9s/5m0s
+
+running (1m19.9s), 500/500 VUs, 16607 complete and 0 interrupted iterations
+challenge   [  27% ] 500 VUs  1m19.9s/5m0s
+
+running (1m20.9s), 500/500 VUs, 16828 complete and 0 interrupted iterations
+challenge   [  27% ] 500 VUs  1m20.9s/5m0s
+
+running (1m21.9s), 500/500 VUs, 17064 complete and 0 interrupted iterations
+challenge   [  27% ] 500 VUs  1m21.9s/5m0s
+
+running (1m22.9s), 500/500 VUs, 17266 complete and 0 interrupted iterations
+challenge   [  28% ] 500 VUs  1m22.9s/5m0s
+
+running (1m23.9s), 500/500 VUs, 17481 complete and 0 interrupted iterations
+challenge   [  28% ] 500 VUs  1m23.9s/5m0s
+
+running (1m24.9s), 500/500 VUs, 17694 complete and 0 interrupted iterations
+challenge   [  28% ] 500 VUs  1m24.9s/5m0s
+
+running (1m25.9s), 500/500 VUs, 17915 complete and 0 interrupted iterations
+challenge   [  29% ] 500 VUs  1m25.9s/5m0s
+
+running (1m26.9s), 500/500 VUs, 18110 complete and 0 interrupted iterations
+challenge   [  29% ] 500 VUs  1m26.9s/5m0s
+
+running (1m27.9s), 500/500 VUs, 18327 complete and 0 interrupted iterations
+challenge   [  29% ] 500 VUs  1m27.9s/5m0s
+
+running (1m28.9s), 500/500 VUs, 18546 complete and 0 interrupted iterations
+challenge   [  30% ] 500 VUs  1m28.9s/5m0s
+
+running (1m29.9s), 500/500 VUs, 18767 complete and 0 interrupted iterations
+challenge   [  30% ] 500 VUs  1m29.9s/5m0s
+
+running (1m30.9s), 500/500 VUs, 18986 complete and 0 interrupted iterations
+challenge   [  30% ] 500 VUs  1m30.9s/5m0s
+
+running (1m31.9s), 500/500 VUs, 19205 complete and 0 interrupted iterations
+challenge   [  31% ] 500 VUs  1m31.9s/5m0s
+
+running (1m32.9s), 500/500 VUs, 19399 complete and 0 interrupted iterations
+challenge   [  31% ] 500 VUs  1m32.9s/5m0s
+
+running (1m33.9s), 500/500 VUs, 19622 complete and 0 interrupted iterations
+challenge   [  31% ] 500 VUs  1m33.9s/5m0s
+
+running (1m34.9s), 500/500 VUs, 19836 complete and 0 interrupted iterations
+challenge   [  32% ] 500 VUs  1m34.9s/5m0s
+
+running (1m35.9s), 500/500 VUs, 20057 complete and 0 interrupted iterations
+challenge   [  32% ] 500 VUs  1m35.9s/5m0s
+
+running (1m36.9s), 500/500 VUs, 20269 complete and 0 interrupted iterations
+challenge   [  32% ] 500 VUs  1m36.9s/5m0s
+
+running (1m37.9s), 500/500 VUs, 20482 complete and 0 interrupted iterations
+challenge   [  33% ] 500 VUs  1m37.9s/5m0s
+
+running (1m38.9s), 500/500 VUs, 20683 complete and 0 interrupted iterations
+challenge   [  33% ] 500 VUs  1m38.9s/5m0s
+
+running (1m39.9s), 500/500 VUs, 20868 complete and 0 interrupted iterations
+challenge   [  33% ] 500 VUs  1m39.9s/5m0s
+
+running (1m40.9s), 500/500 VUs, 21079 complete and 0 interrupted iterations
+challenge   [  34% ] 500 VUs  1m40.9s/5m0s
+
+running (1m41.9s), 500/500 VUs, 21286 complete and 0 interrupted iterations
+challenge   [  34% ] 500 VUs  1m41.9s/5m0s
+
+running (1m42.9s), 500/500 VUs, 21438 complete and 0 interrupted iterations
+challenge   [  34% ] 500 VUs  1m42.9s/5m0s
+
+running (1m43.9s), 500/500 VUs, 21555 complete and 0 interrupted iterations
+challenge   [  35% ] 500 VUs  1m43.9s/5m0s
+
+running (1m44.9s), 500/500 VUs, 21630 complete and 0 interrupted iterations
+challenge   [  35% ] 500 VUs  1m44.9s/5m0s
+
+running (1m45.9s), 500/500 VUs, 21716 complete and 0 interrupted iterations
+challenge   [  35% ] 500 VUs  1m45.9s/5m0s
+
+running (1m46.9s), 500/500 VUs, 21901 complete and 0 interrupted iterations
+challenge   [  36% ] 500 VUs  1m46.9s/5m0s
+
+running (1m47.9s), 500/500 VUs, 22078 complete and 0 interrupted iterations
+challenge   [  36% ] 500 VUs  1m47.9s/5m0s
+
+running (1m48.9s), 500/500 VUs, 22176 complete and 0 interrupted iterations
+challenge   [  36% ] 500 VUs  1m48.9s/5m0s
+
+running (1m49.9s), 500/500 VUs, 22305 complete and 0 interrupted iterations
+challenge   [  37% ] 500 VUs  1m49.9s/5m0s
+
+running (1m50.9s), 500/500 VUs, 22488 complete and 0 interrupted iterations
+challenge   [  37% ] 500 VUs  1m50.9s/5m0s
+
+running (1m51.9s), 500/500 VUs, 22617 complete and 0 interrupted iterations
+challenge   [  37% ] 500 VUs  1m51.9s/5m0s
+
+running (1m52.9s), 500/500 VUs, 22783 complete and 0 interrupted iterations
+challenge   [  38% ] 500 VUs  1m52.9s/5m0s
+
+running (1m53.9s), 500/500 VUs, 23003 complete and 0 interrupted iterations
+challenge   [  38% ] 500 VUs  1m53.9s/5m0s
+
+running (1m54.9s), 500/500 VUs, 23217 complete and 0 interrupted iterations
+challenge   [  38% ] 500 VUs  1m54.9s/5m0s
+
+running (1m55.9s), 500/500 VUs, 23415 complete and 0 interrupted iterations
+challenge   [  39% ] 500 VUs  1m55.9s/5m0s
+
+running (1m56.9s), 500/500 VUs, 23625 complete and 0 interrupted iterations
+challenge   [  39% ] 500 VUs  1m56.9s/5m0s
+
+running (1m57.9s), 500/500 VUs, 23830 complete and 0 interrupted iterations
+challenge   [  39% ] 500 VUs  1m57.9s/5m0s
+
+running (1m58.9s), 500/500 VUs, 24041 complete and 0 interrupted iterations
+challenge   [  40% ] 500 VUs  1m58.9s/5m0s
+
+running (1m59.9s), 500/500 VUs, 24258 complete and 0 interrupted iterations
+challenge   [  40% ] 500 VUs  1m59.9s/5m0s
+
+running (2m00.9s), 500/500 VUs, 24465 complete and 0 interrupted iterations
+challenge   [  40% ] 500 VUs  2m00.9s/5m0s
+
+running (2m01.9s), 500/500 VUs, 24678 complete and 0 interrupted iterations
+challenge   [  41% ] 500 VUs  2m01.9s/5m0s
+
+running (2m02.9s), 500/500 VUs, 24877 complete and 0 interrupted iterations
+challenge   [  41% ] 500 VUs  2m02.9s/5m0s
+
+running (2m03.9s), 500/500 VUs, 25082 complete and 0 interrupted iterations
+challenge   [  41% ] 500 VUs  2m03.9s/5m0s
+
+running (2m04.9s), 500/500 VUs, 25304 complete and 0 interrupted iterations
+challenge   [  42% ] 500 VUs  2m04.9s/5m0s
+
+running (2m05.9s), 500/500 VUs, 25529 complete and 0 interrupted iterations
+challenge   [  42% ] 500 VUs  2m05.9s/5m0s
+
+running (2m06.9s), 500/500 VUs, 25725 complete and 0 interrupted iterations
+challenge   [  42% ] 500 VUs  2m06.9s/5m0s
+
+running (2m07.9s), 500/500 VUs, 25938 complete and 0 interrupted iterations
+challenge   [  43% ] 500 VUs  2m07.9s/5m0s
+
+running (2m08.9s), 500/500 VUs, 26151 complete and 0 interrupted iterations
+challenge   [  43% ] 500 VUs  2m08.9s/5m0s
+
+running (2m09.9s), 500/500 VUs, 26369 complete and 0 interrupted iterations
+challenge   [  43% ] 500 VUs  2m09.9s/5m0s
+
+running (2m10.9s), 500/500 VUs, 26591 complete and 0 interrupted iterations
+challenge   [  44% ] 500 VUs  2m10.9s/5m0s
+
+running (2m11.9s), 500/500 VUs, 26793 complete and 0 interrupted iterations
+challenge   [  44% ] 500 VUs  2m11.9s/5m0s
+
+running (2m12.9s), 500/500 VUs, 27026 complete and 0 interrupted iterations
+challenge   [  44% ] 500 VUs  2m12.9s/5m0s
+
+running (2m13.9s), 500/500 VUs, 27239 complete and 0 interrupted iterations
+challenge   [  45% ] 500 VUs  2m13.9s/5m0s
+
+running (2m14.9s), 500/500 VUs, 27437 complete and 0 interrupted iterations
+challenge   [  45% ] 500 VUs  2m14.9s/5m0s
+
+running (2m15.9s), 500/500 VUs, 27685 complete and 0 interrupted iterations
+challenge   [  45% ] 500 VUs  2m15.9s/5m0s
+
+running (2m16.9s), 500/500 VUs, 27869 complete and 0 interrupted iterations
+challenge   [  46% ] 500 VUs  2m16.9s/5m0s
+
+running (2m17.9s), 500/500 VUs, 28086 complete and 0 interrupted iterations
+challenge   [  46% ] 500 VUs  2m17.9s/5m0s
+
+running (2m18.9s), 500/500 VUs, 28308 complete and 0 interrupted iterations
+challenge   [  46% ] 500 VUs  2m18.9s/5m0s
+
+running (2m19.9s), 500/500 VUs, 28514 complete and 0 interrupted iterations
+challenge   [  47% ] 500 VUs  2m19.9s/5m0s
+
+running (2m20.9s), 500/500 VUs, 28733 complete and 0 interrupted iterations
+challenge   [  47% ] 500 VUs  2m20.9s/5m0s
+
+running (2m21.9s), 500/500 VUs, 28951 complete and 0 interrupted iterations
+challenge   [  47% ] 500 VUs  2m21.9s/5m0s
+
+running (2m22.9s), 500/500 VUs, 29167 complete and 0 interrupted iterations
+challenge   [  48% ] 500 VUs  2m22.9s/5m0s
+
+running (2m23.9s), 500/500 VUs, 29383 complete and 0 interrupted iterations
+challenge   [  48% ] 500 VUs  2m23.9s/5m0s
+
+running (2m24.9s), 500/500 VUs, 29592 complete and 0 interrupted iterations
+challenge   [  48% ] 500 VUs  2m24.9s/5m0s
+
+running (2m25.9s), 500/500 VUs, 29811 complete and 0 interrupted iterations
+challenge   [  49% ] 500 VUs  2m25.9s/5m0s
+
+running (2m26.9s), 500/500 VUs, 30034 complete and 0 interrupted iterations
+challenge   [  49% ] 500 VUs  2m26.9s/5m0s
+
+running (2m27.9s), 500/500 VUs, 30249 complete and 0 interrupted iterations
+challenge   [  49% ] 500 VUs  2m27.9s/5m0s
+
+running (2m28.9s), 500/500 VUs, 30448 complete and 0 interrupted iterations
+challenge   [  50% ] 500 VUs  2m28.9s/5m0s
+
+running (2m29.9s), 500/500 VUs, 30676 complete and 0 interrupted iterations
+challenge   [  50% ] 500 VUs  2m29.9s/5m0s
+
+running (2m30.9s), 500/500 VUs, 30887 complete and 0 interrupted iterations
+challenge   [  50% ] 500 VUs  2m30.9s/5m0s
+
+running (2m31.9s), 500/500 VUs, 31105 complete and 0 interrupted iterations
+challenge   [  51% ] 500 VUs  2m31.9s/5m0s
+
+running (2m32.9s), 500/500 VUs, 31324 complete and 0 interrupted iterations
+challenge   [  51% ] 500 VUs  2m32.9s/5m0s
+
+running (2m33.9s), 500/500 VUs, 31543 complete and 0 interrupted iterations
+challenge   [  51% ] 500 VUs  2m33.9s/5m0s
+
+running (2m34.9s), 500/500 VUs, 31762 complete and 0 interrupted iterations
+challenge   [  52% ] 500 VUs  2m34.9s/5m0s
+
+running (2m35.9s), 500/500 VUs, 31968 complete and 0 interrupted iterations
+challenge   [  52% ] 500 VUs  2m35.9s/5m0s
+
+running (2m36.9s), 500/500 VUs, 32182 complete and 0 interrupted iterations
+challenge   [  52% ] 500 VUs  2m36.9s/5m0s
+
+running (2m37.9s), 500/500 VUs, 32398 complete and 0 interrupted iterations
+challenge   [  53% ] 500 VUs  2m37.9s/5m0s
+
+running (2m38.9s), 500/500 VUs, 32601 complete and 0 interrupted iterations
+challenge   [  53% ] 500 VUs  2m38.9s/5m0s
+
+running (2m39.9s), 500/500 VUs, 32833 complete and 0 interrupted iterations
+challenge   [  53% ] 500 VUs  2m39.9s/5m0s
+
+running (2m40.9s), 500/500 VUs, 33039 complete and 0 interrupted iterations
+challenge   [  54% ] 500 VUs  2m40.9s/5m0s
+
+running (2m41.9s), 500/500 VUs, 33256 complete and 0 interrupted iterations
+challenge   [  54% ] 500 VUs  2m41.9s/5m0s
+
+running (2m42.9s), 500/500 VUs, 33469 complete and 0 interrupted iterations
+challenge   [  54% ] 500 VUs  2m42.9s/5m0s
+
+running (2m43.9s), 500/500 VUs, 33673 complete and 0 interrupted iterations
+challenge   [  55% ] 500 VUs  2m43.9s/5m0s
+
+running (2m44.9s), 500/500 VUs, 33886 complete and 0 interrupted iterations
+challenge   [  55% ] 500 VUs  2m44.9s/5m0s
+
+running (2m45.9s), 500/500 VUs, 34099 complete and 0 interrupted iterations
+challenge   [  55% ] 500 VUs  2m45.9s/5m0s
+
+running (2m46.9s), 500/500 VUs, 34304 complete and 0 interrupted iterations
+challenge   [  56% ] 500 VUs  2m46.9s/5m0s
+
+running (2m47.9s), 500/500 VUs, 34524 complete and 0 interrupted iterations
+challenge   [  56% ] 500 VUs  2m47.9s/5m0s
+
+running (2m48.9s), 500/500 VUs, 34745 complete and 0 interrupted iterations
+challenge   [  56% ] 500 VUs  2m48.9s/5m0s
+
+running (2m49.9s), 500/500 VUs, 34932 complete and 0 interrupted iterations
+challenge   [  57% ] 500 VUs  2m49.9s/5m0s
+
+running (2m50.9s), 500/500 VUs, 35171 complete and 0 interrupted iterations
+challenge   [  57% ] 500 VUs  2m50.9s/5m0s
+
+running (2m51.9s), 500/500 VUs, 35382 complete and 0 interrupted iterations
+challenge   [  57% ] 500 VUs  2m51.9s/5m0s
+
+running (2m52.9s), 500/500 VUs, 35596 complete and 0 interrupted iterations
+challenge   [  58% ] 500 VUs  2m52.9s/5m0s
+
+running (2m53.9s), 500/500 VUs, 35803 complete and 0 interrupted iterations
+challenge   [  58% ] 500 VUs  2m53.9s/5m0s
+
+running (2m54.9s), 500/500 VUs, 36016 complete and 0 interrupted iterations
+challenge   [  58% ] 500 VUs  2m54.9s/5m0s
+
+running (2m55.9s), 500/500 VUs, 36221 complete and 0 interrupted iterations
+challenge   [  59% ] 500 VUs  2m55.9s/5m0s
+
+running (2m56.9s), 500/500 VUs, 36443 complete and 0 interrupted iterations
+challenge   [  59% ] 500 VUs  2m56.9s/5m0s
+
+running (2m57.9s), 500/500 VUs, 36648 complete and 0 interrupted iterations
+challenge   [  59% ] 500 VUs  2m57.9s/5m0s
+time="2026-10-27T20:14:54-03:00" level=warning msg="The flush operation took higher than the expected set push interval. If you see this message multiple times then the setup or configuration need to be adjusted to achieve a sustainable rate." output=InfluxDBv1 t=1.171961622s
+
+running (2m58.9s), 500/500 VUs, 36804 complete and 0 interrupted iterations
+challenge   [  60% ] 500 VUs  2m58.9s/5m0s
+
+running (2m59.9s), 500/500 VUs, 36985 complete and 0 interrupted iterations
+challenge   [  60% ] 500 VUs  2m59.9s/5m0s
+
+running (3m00.9s), 500/500 VUs, 37179 complete and 0 interrupted iterations
+challenge   [  60% ] 500 VUs  3m00.9s/5m0s
+
+running (3m01.9s), 500/500 VUs, 37375 complete and 0 interrupted iterations
+challenge   [  61% ] 500 VUs  3m01.9s/5m0s
+
+running (3m02.9s), 500/500 VUs, 37563 complete and 0 interrupted iterations
+challenge   [  61% ] 500 VUs  3m02.9s/5m0s
+
+running (3m03.9s), 500/500 VUs, 37729 complete and 0 interrupted iterations
+challenge   [  61% ] 500 VUs  3m03.9s/5m0s
+
+running (3m04.9s), 500/500 VUs, 37919 complete and 0 interrupted iterations
+challenge   [  62% ] 500 VUs  3m04.9s/5m0s
+
+running (3m05.9s), 500/500 VUs, 38126 complete and 0 interrupted iterations
+challenge   [  62% ] 500 VUs  3m05.9s/5m0s
+
+running (3m06.9s), 500/500 VUs, 38330 complete and 0 interrupted iterations
+challenge   [  62% ] 500 VUs  3m06.9s/5m0s
+
+running (3m07.9s), 500/500 VUs, 38545 complete and 0 interrupted iterations
+challenge   [  63% ] 500 VUs  3m07.9s/5m0s
+
+running (3m08.9s), 500/500 VUs, 38760 complete and 0 interrupted iterations
+challenge   [  63% ] 500 VUs  3m08.9s/5m0s
+
+running (3m09.9s), 500/500 VUs, 38965 complete and 0 interrupted iterations
+challenge   [  63% ] 500 VUs  3m09.9s/5m0s
+
+running (3m10.9s), 500/500 VUs, 39173 complete and 0 interrupted iterations
+challenge   [  64% ] 500 VUs  3m10.9s/5m0s
+
+running (3m11.9s), 500/500 VUs, 39379 complete and 0 interrupted iterations
+challenge   [  64% ] 500 VUs  3m11.9s/5m0s
+
+running (3m12.9s), 500/500 VUs, 39610 complete and 0 interrupted iterations
+challenge   [  64% ] 500 VUs  3m12.9s/5m0s
+
+running (3m13.9s), 500/500 VUs, 39820 complete and 0 interrupted iterations
+challenge   [  65% ] 500 VUs  3m13.9s/5m0s
+
+running (3m14.9s), 500/500 VUs, 40028 complete and 0 interrupted iterations
+challenge   [  65% ] 500 VUs  3m14.9s/5m0s
+
+running (3m15.9s), 500/500 VUs, 40244 complete and 0 interrupted iterations
+challenge   [  65% ] 500 VUs  3m15.9s/5m0s
+
+running (3m16.9s), 500/500 VUs, 40449 complete and 0 interrupted iterations
+challenge   [  66% ] 500 VUs  3m16.9s/5m0s
+
+running (3m17.9s), 500/500 VUs, 40667 complete and 0 interrupted iterations
+challenge   [  66% ] 500 VUs  3m17.9s/5m0s
+
+running (3m18.9s), 500/500 VUs, 40880 complete and 0 interrupted iterations
+challenge   [  66% ] 500 VUs  3m18.9s/5m0s
+
+running (3m19.9s), 500/500 VUs, 41097 complete and 0 interrupted iterations
+challenge   [  67% ] 500 VUs  3m19.9s/5m0s
+
+running (3m20.9s), 500/500 VUs, 41311 complete and 0 interrupted iterations
+challenge   [  67% ] 500 VUs  3m20.9s/5m0s
+
+running (3m21.9s), 500/500 VUs, 41534 complete and 0 interrupted iterations
+challenge   [  67% ] 500 VUs  3m21.9s/5m0s
+
+running (3m22.9s), 500/500 VUs, 41752 complete and 0 interrupted iterations
+challenge   [  68% ] 500 VUs  3m22.9s/5m0s
+
+running (3m23.9s), 500/500 VUs, 41966 complete and 0 interrupted iterations
+challenge   [  68% ] 500 VUs  3m23.9s/5m0s
+
+running (3m24.9s), 500/500 VUs, 42180 complete and 0 interrupted iterations
+challenge   [  68% ] 500 VUs  3m24.9s/5m0s
+
+running (3m25.9s), 500/500 VUs, 42398 complete and 0 interrupted iterations
+challenge   [  69% ] 500 VUs  3m25.9s/5m0s
+
+running (3m26.9s), 500/500 VUs, 42604 complete and 0 interrupted iterations
+challenge   [  69% ] 500 VUs  3m26.9s/5m0s
+
+running (3m27.9s), 500/500 VUs, 42821 complete and 0 interrupted iterations
+challenge   [  69% ] 500 VUs  3m27.9s/5m0s
+
+running (3m28.9s), 500/500 VUs, 43042 complete and 0 interrupted iterations
+challenge   [  70% ] 500 VUs  3m28.9s/5m0s
+
+running (3m29.9s), 500/500 VUs, 43258 complete and 0 interrupted iterations
+challenge   [  70% ] 500 VUs  3m29.9s/5m0s
+
+running (3m30.9s), 500/500 VUs, 43466 complete and 0 interrupted iterations
+challenge   [  70% ] 500 VUs  3m30.9s/5m0s
+
+running (3m31.9s), 500/500 VUs, 43684 complete and 0 interrupted iterations
+challenge   [  71% ] 500 VUs  3m31.9s/5m0s
+
+running (3m32.9s), 500/500 VUs, 43893 complete and 0 interrupted iterations
+challenge   [  71% ] 500 VUs  3m32.9s/5m0s
+
+running (3m33.9s), 500/500 VUs, 44118 complete and 0 interrupted iterations
+challenge   [  71% ] 500 VUs  3m33.9s/5m0s
+
+running (3m34.9s), 500/500 VUs, 44324 complete and 0 interrupted iterations
+challenge   [  72% ] 500 VUs  3m34.9s/5m0s
+
+running (3m35.9s), 500/500 VUs, 44539 complete and 0 interrupted iterations
+challenge   [  72% ] 500 VUs  3m35.9s/5m0s
+
+running (3m36.9s), 500/500 VUs, 44760 complete and 0 interrupted iterations
+challenge   [  72% ] 500 VUs  3m36.9s/5m0s
+
+running (3m37.9s), 500/500 VUs, 44958 complete and 0 interrupted iterations
+challenge   [  73% ] 500 VUs  3m37.9s/5m0s
+
+running (3m38.9s), 500/500 VUs, 45178 complete and 0 interrupted iterations
+challenge   [  73% ] 500 VUs  3m38.9s/5m0s
+
+running (3m39.9s), 500/500 VUs, 45386 complete and 0 interrupted iterations
+challenge   [  73% ] 500 VUs  3m39.9s/5m0s
+
+running (3m40.9s), 500/500 VUs, 45593 complete and 0 interrupted iterations
+challenge   [  74% ] 500 VUs  3m40.9s/5m0s
+
+running (3m41.9s), 500/500 VUs, 45818 complete and 0 interrupted iterations
+challenge   [  74% ] 500 VUs  3m41.9s/5m0s
+
+running (3m42.9s), 500/500 VUs, 46019 complete and 0 interrupted iterations
+challenge   [  74% ] 500 VUs  3m42.9s/5m0s
+
+running (3m43.9s), 500/500 VUs, 46237 complete and 0 interrupted iterations
+challenge   [  75% ] 500 VUs  3m43.9s/5m0s
+
+running (3m44.9s), 500/500 VUs, 46450 complete and 0 interrupted iterations
+challenge   [  75% ] 500 VUs  3m44.9s/5m0s
+
+running (3m45.9s), 500/500 VUs, 46669 complete and 0 interrupted iterations
+challenge   [  75% ] 500 VUs  3m45.9s/5m0s
+
+running (3m46.9s), 500/500 VUs, 46871 complete and 0 interrupted iterations
+challenge   [  76% ] 500 VUs  3m46.9s/5m0s
+
+running (3m47.9s), 500/500 VUs, 47098 complete and 0 interrupted iterations
+challenge   [  76% ] 500 VUs  3m47.9s/5m0s
+
+running (3m48.9s), 500/500 VUs, 47299 complete and 0 interrupted iterations
+challenge   [  76% ] 500 VUs  3m48.9s/5m0s
+
+running (3m49.9s), 500/500 VUs, 47531 complete and 0 interrupted iterations
+challenge   [  77% ] 500 VUs  3m49.9s/5m0s
+
+running (3m50.9s), 500/500 VUs, 47743 complete and 0 interrupted iterations
+challenge   [  77% ] 500 VUs  3m50.9s/5m0s
+
+running (3m51.9s), 500/500 VUs, 47937 complete and 0 interrupted iterations
+challenge   [  77% ] 500 VUs  3m51.9s/5m0s
+
+running (3m52.9s), 500/500 VUs, 48166 complete and 0 interrupted iterations
+challenge   [  78% ] 500 VUs  3m52.9s/5m0s
+
+running (3m53.9s), 500/500 VUs, 48375 complete and 0 interrupted iterations
+challenge   [  78% ] 500 VUs  3m53.9s/5m0s
+
+running (3m54.9s), 500/500 VUs, 48590 complete and 0 interrupted iterations
+challenge   [  78% ] 500 VUs  3m54.9s/5m0s
+
+running (3m55.9s), 500/500 VUs, 48808 complete and 0 interrupted iterations
+challenge   [  79% ] 500 VUs  3m55.9s/5m0s
+
+running (3m56.9s), 500/500 VUs, 49006 complete and 0 interrupted iterations
+challenge   [  79% ] 500 VUs  3m56.9s/5m0s
+
+running (3m57.9s), 500/500 VUs, 49207 complete and 0 interrupted iterations
+challenge   [  79% ] 500 VUs  3m57.9s/5m0s
+
+running (3m58.9s), 500/500 VUs, 49445 complete and 0 interrupted iterations
+challenge   [  80% ] 500 VUs  3m58.9s/5m0s
+
+running (3m59.9s), 500/500 VUs, 49632 complete and 0 interrupted iterations
+challenge   [  80% ] 500 VUs  3m59.9s/5m0s
+
+running (4m00.9s), 500/500 VUs, 49854 complete and 0 interrupted iterations
+challenge   [  80% ] 500 VUs  4m00.9s/5m0s
+
+running (4m01.9s), 500/500 VUs, 50080 complete and 0 interrupted iterations
+challenge   [  81% ] 500 VUs  4m01.9s/5m0s
+
+running (4m02.9s), 500/500 VUs, 50277 complete and 0 interrupted iterations
+challenge   [  81% ] 500 VUs  4m02.9s/5m0s
+
+running (4m03.9s), 500/500 VUs, 50497 complete and 0 interrupted iterations
+challenge   [  81% ] 500 VUs  4m03.9s/5m0s
+
+running (4m04.9s), 500/500 VUs, 50714 complete and 0 interrupted iterations
+challenge   [  82% ] 500 VUs  4m04.9s/5m0s
+
+running (4m05.9s), 500/500 VUs, 50928 complete and 0 interrupted iterations
+challenge   [  82% ] 500 VUs  4m05.9s/5m0s
+
+running (4m06.9s), 500/500 VUs, 51133 complete and 0 interrupted iterations
+challenge   [  82% ] 500 VUs  4m06.9s/5m0s
+
+running (4m07.9s), 500/500 VUs, 51360 complete and 0 interrupted iterations
+challenge   [  83% ] 500 VUs  4m07.9s/5m0s
+
+running (4m08.9s), 500/500 VUs, 51550 complete and 0 interrupted iterations
+challenge   [  83% ] 500 VUs  4m08.9s/5m0s
+
+running (4m09.9s), 500/500 VUs, 51772 complete and 0 interrupted iterations
+challenge   [  83% ] 500 VUs  4m09.9s/5m0s
+
+running (4m10.9s), 500/500 VUs, 51989 complete and 0 interrupted iterations
+challenge   [  84% ] 500 VUs  4m10.9s/5m0s
+
+running (4m11.9s), 500/500 VUs, 52191 complete and 0 interrupted iterations
+challenge   [  84% ] 500 VUs  4m11.9s/5m0s
+
+running (4m12.9s), 500/500 VUs, 52400 complete and 0 interrupted iterations
+challenge   [  84% ] 500 VUs  4m12.9s/5m0s
+
+running (4m13.9s), 500/500 VUs, 52626 complete and 0 interrupted iterations
+challenge   [  85% ] 500 VUs  4m13.9s/5m0s
+
+running (4m14.9s), 500/500 VUs, 52838 complete and 0 interrupted iterations
+challenge   [  85% ] 500 VUs  4m14.9s/5m0s
+
+running (4m15.9s), 500/500 VUs, 53052 complete and 0 interrupted iterations
+challenge   [  85% ] 500 VUs  4m15.9s/5m0s
+
+running (4m16.9s), 500/500 VUs, 53264 complete and 0 interrupted iterations
+challenge   [  86% ] 500 VUs  4m16.9s/5m0s
+
+running (4m17.9s), 500/500 VUs, 53489 complete and 0 interrupted iterations
+challenge   [  86% ] 500 VUs  4m17.9s/5m0s
+
+running (4m18.9s), 500/500 VUs, 53699 complete and 0 interrupted iterations
+challenge   [  86% ] 500 VUs  4m18.9s/5m0s
+
+running (4m19.9s), 500/500 VUs, 53916 complete and 0 interrupted iterations
+challenge   [  87% ] 500 VUs  4m19.9s/5m0s
+
+running (4m20.9s), 500/500 VUs, 54121 complete and 0 interrupted iterations
+challenge   [  87% ] 500 VUs  4m20.9s/5m0s
+
+running (4m21.9s), 500/500 VUs, 54332 complete and 0 interrupted iterations
+challenge   [  87% ] 500 VUs  4m21.9s/5m0s
+
+running (4m22.9s), 500/500 VUs, 54566 complete and 0 interrupted iterations
+challenge   [  88% ] 500 VUs  4m22.9s/5m0s
+
+running (4m23.9s), 500/500 VUs, 54763 complete and 0 interrupted iterations
+challenge   [  88% ] 500 VUs  4m23.9s/5m0s
+
+running (4m24.9s), 500/500 VUs, 54979 complete and 0 interrupted iterations
+challenge   [  88% ] 500 VUs  4m24.9s/5m0s
+
+running (4m25.9s), 500/500 VUs, 55210 complete and 0 interrupted iterations
+challenge   [  89% ] 500 VUs  4m25.9s/5m0s
+
+running (4m26.9s), 500/500 VUs, 55400 complete and 0 interrupted iterations
+challenge   [  89% ] 500 VUs  4m26.9s/5m0s
+
+running (4m27.9s), 500/500 VUs, 55630 complete and 0 interrupted iterations
+challenge   [  89% ] 500 VUs  4m27.9s/5m0s
+
+running (4m28.9s), 500/500 VUs, 55863 complete and 0 interrupted iterations
+challenge   [  90% ] 500 VUs  4m28.9s/5m0s
+
+running (4m29.9s), 500/500 VUs, 56062 complete and 0 interrupted iterations
+challenge   [  90% ] 500 VUs  4m29.9s/5m0s
+
+running (4m30.9s), 500/500 VUs, 56283 complete and 0 interrupted iterations
+challenge   [  90% ] 500 VUs  4m30.9s/5m0s
+
+running (4m31.9s), 500/500 VUs, 56497 complete and 0 interrupted iterations
+challenge   [  91% ] 500 VUs  4m31.9s/5m0s
+
+running (4m32.9s), 500/500 VUs, 56721 complete and 0 interrupted iterations
+challenge   [  91% ] 500 VUs  4m32.9s/5m0s
+
+running (4m33.9s), 500/500 VUs, 56910 complete and 0 interrupted iterations
+challenge   [  91% ] 500 VUs  4m33.9s/5m0s
+
+running (4m34.9s), 500/500 VUs, 57135 complete and 0 interrupted iterations
+challenge   [  92% ] 500 VUs  4m34.9s/5m0s
+
+running (4m35.9s), 500/500 VUs, 57345 complete and 0 interrupted iterations
+challenge   [  92% ] 500 VUs  4m35.9s/5m0s
+
+running (4m36.9s), 500/500 VUs, 57553 complete and 0 interrupted iterations
+challenge   [  92% ] 500 VUs  4m36.9s/5m0s
+
+running (4m37.9s), 500/500 VUs, 57771 complete and 0 interrupted iterations
+challenge   [  93% ] 500 VUs  4m37.9s/5m0s
+
+running (4m38.9s), 500/500 VUs, 57991 complete and 0 interrupted iterations
+challenge   [  93% ] 500 VUs  4m38.9s/5m0s
+
+running (4m39.9s), 500/500 VUs, 58195 complete and 0 interrupted iterations
+challenge   [  93% ] 500 VUs  4m39.9s/5m0s
+
+running (4m40.9s), 500/500 VUs, 58413 complete and 0 interrupted iterations
+challenge   [  94% ] 500 VUs  4m40.9s/5m0s
+
+running (4m41.9s), 500/500 VUs, 58636 complete and 0 interrupted iterations
+challenge   [  94% ] 500 VUs  4m41.9s/5m0s
+
+running (4m42.9s), 500/500 VUs, 58838 complete and 0 interrupted iterations
+challenge   [  94% ] 500 VUs  4m42.9s/5m0s
+
+running (4m43.9s), 500/500 VUs, 59060 complete and 0 interrupted iterations
+challenge   [  95% ] 500 VUs  4m43.9s/5m0s
+
+running (4m44.9s), 500/500 VUs, 59279 complete and 0 interrupted iterations
+challenge   [  95% ] 500 VUs  4m44.9s/5m0s
+
+running (4m45.9s), 500/500 VUs, 59481 complete and 0 interrupted iterations
+challenge   [  95% ] 500 VUs  4m45.9s/5m0s
+
+running (4m46.9s), 500/500 VUs, 59708 complete and 0 interrupted iterations
+challenge   [  96% ] 500 VUs  4m46.9s/5m0s
+
+running (4m47.9s), 500/500 VUs, 59917 complete and 0 interrupted iterations
+challenge   [  96% ] 500 VUs  4m47.9s/5m0s
+
+running (4m48.9s), 500/500 VUs, 60128 complete and 0 interrupted iterations
+challenge   [  96% ] 500 VUs  4m48.9s/5m0s
+
+running (4m49.9s), 500/500 VUs, 60341 complete and 0 interrupted iterations
+challenge   [  97% ] 500 VUs  4m49.9s/5m0s
+
+running (4m50.9s), 500/500 VUs, 60556 complete and 0 interrupted iterations
+challenge   [  97% ] 500 VUs  4m50.9s/5m0s
+
+running (4m51.9s), 500/500 VUs, 60767 complete and 0 interrupted iterations
+challenge   [  97% ] 500 VUs  4m51.9s/5m0s
+
+running (4m52.9s), 500/500 VUs, 60992 complete and 0 interrupted iterations
+challenge   [  98% ] 500 VUs  4m52.9s/5m0s
+
+running (4m53.9s), 500/500 VUs, 61193 complete and 0 interrupted iterations
+challenge   [  98% ] 500 VUs  4m53.9s/5m0s
+
+running (4m54.9s), 500/500 VUs, 61420 complete and 0 interrupted iterations
+challenge   [  98% ] 500 VUs  4m54.9s/5m0s
+
+running (4m55.9s), 500/500 VUs, 61633 complete and 0 interrupted iterations
+challenge   [  99% ] 500 VUs  4m55.9s/5m0s
+
+running (4m56.9s), 500/500 VUs, 61837 complete and 0 interrupted iterations
+challenge   [  99% ] 500 VUs  4m56.9s/5m0s
+
+running (4m57.9s), 500/500 VUs, 62073 complete and 0 interrupted iterations
+challenge   [  99% ] 500 VUs  4m57.9s/5m0s
+
+running (4m58.9s), 500/500 VUs, 62283 complete and 0 interrupted iterations
+challenge   [ 100% ] 500 VUs  4m58.9s/5m0s
+
+running (4m59.9s), 500/500 VUs, 62493 complete and 0 interrupted iterations
+challenge   [ 100% ] 500 VUs  4m59.9s/5m0s
+
+running (5m00.9s), 300/500 VUs, 62725 complete and 0 interrupted iterations
+challenge ↓ [ 100% ] 500 VUs  5m0s
+
+running (5m01.9s), 125/500 VUs, 62900 complete and 0 interrupted iterations
+challenge ↓ [ 100% ] 500 VUs  5m0s
+
+running (5m02.9s), 010/500 VUs, 63015 complete and 0 interrupted iterations
+challenge ↓ [ 100% ] 500 VUs  5m0s
+
+running (5m03.8s), 000/500 VUs, 63025 complete and 0 interrupted iterations
+challenge ✓ [ 100% ] 500 VUs  5m0s
+
+  [1mResultado da execução — perfil challenge[0m
+
+  [1mTHRESHOLDS[0m
+    api_latency ..................: p(95)<800 — [32mok[0m
+    checks .......................: rate>0.99 — [32mok[0m
+    dropped_iterations ...........: count==0 — [32mok[0m
+    http_req_duration ............: p(95)<800 — [32mok[0m
+    http_req_duration ............: p(99)<1500 — [32mok[0m
+    http_req_failed ..............: rate<0.01 — [32mok[0m
+
+  [1mCUSTOM[0m
+    api_latency ..........................: [36mavg=76.98ms min=22.78ms med=42.00ms max=8.61s p(90)=166.70ms p(95)=172.94ms p(99)=462.10ms[0m
+    business_flows .......................: [36m62893 (207.01/s)[0m
+    checks ...............................: [36m99.98% [32m✓ 693142[0m [31m✗ 133[0m[0m
+    create_journey_duration ..............: [36mavg=186.62ms min=145.00ms med=165.00ms max=3.35s p(90)=178.00ms p(95)=238.00ms p(99)=550.76ms[0m
+    create_response_time .................: [36mavg=186.60ms min=145.00ms med=165.00ms max=3.35s p(90)=178.00ms p(95)=238.00ms p(99)=550.76ms[0m
+    failed_reads .........................: [36m133 (0.44/s)[0m
+    get_journey_duration .................: [36mavg=200.93ms min=118.00ms med=165.00ms max=9.55s p(90)=192.00ms p(95)=272.00ms p(99)=1.23s[0m
+    group_duration .......................: [36mavg=77.50ms min=22.89ms med=42.22ms max=8.61s p(90)=166.87ms p(95)=173.13ms p(99)=467.53ms[0m
+    read_response_time ...................: [36mavg=50.21ms min=23.00ms med=40.00ms max=8.61s p(90)=51.00ms p(95)=57.00ms p(99)=435.00ms[0m
+    successful_creates ...................: [36m63025 (207.44/s)[0m
+    successful_reads .....................: [36m251967 (829.32/s)[0m
+
+  [1mHTTP[0m
+    http_req_blocked .....................: [36mavg=0.30ms min=0.00ms med=0.00ms max=935.40ms p(90)=0.00ms p(95)=0.00ms p(99)=0.00ms[0m
+    http_req_connecting ..................: [36mavg=0.08ms min=0.00ms med=0.00ms max=61.89ms p(90)=0.00ms p(95)=0.00ms p(99)=0.00ms[0m
+    http_req_duration ....................: [36mavg=76.98ms min=22.78ms med=42.00ms max=8.61s p(90)=166.70ms p(95)=172.94ms p(99)=462.10ms[0m
+    http_req_duration{expected_response:true} : [36mavg=76.98ms min=22.78ms med=42.00ms max=8.61s p(90)=166.70ms p(95)=172.94ms p(99)=462.10ms[0m
+    http_req_failed ......................: [36m0.00% [32m✓ 0[0m [31m✗ 315125[0m[0m
+    http_req_receiving ...................: [36mavg=3.32ms min=0.01ms med=0.78ms max=3.99s p(90)=9.82ms p(95)=11.02ms p(99)=24.34ms[0m
+    http_req_sending .....................: [36mavg=0.03ms min=0.01ms med=0.03ms max=820.07ms p(90)=0.05ms p(95)=0.05ms p(99)=0.08ms[0m
+    http_req_tls_handshaking .............: [36mavg=0.19ms min=0.00ms med=0.00ms max=864.88ms p(90)=0.00ms p(95)=0.00ms p(99)=0.00ms[0m
+    http_req_waiting .....................: [36mavg=73.63ms min=20.56ms med=38.60ms max=8.61s p(90)=166.35ms p(95)=172.47ms p(99)=455.77ms[0m
+    http_reqs ............................: [36m315125 (1037.20/s)[0m
+
+  [1mEXECUTION[0m
+    dropped_iterations ...................: [36m0 (0.00/s)[0m
+    iteration_duration ...................: [36mavg=2.39s min=1.29s med=2.38s max=11.09s p(90)=3.19s p(95)=3.28s p(99)=4.13s[0m
+    iterations ...........................: [36m63025 (207.44/s)[0m
+    vus ..................................: [36m10 min=10 max=500[0m
+    vus_max ..............................: [36m500 min=500 max=500[0m
+
+  [1mNETWORK[0m
+    data_received ........................: [36m2.38 GB 7.82 MB/s[0m
+    data_sent ............................: [36m32.38 MB 106.56 kB/s[0m
+
+running (5m03.8s), 000/500 VUs, 63025 complete and 0 interrupted iterations
+challenge ✓ [ 100% ] 500 VUs  5m0s

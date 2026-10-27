@@ -23,7 +23,7 @@ scripts/      run.sh — orquestra a execução e guarda todos os resultados; ch
 tests/        contracts.js — testes de contrato dos módulos (1 iteração, sem carga)
 grafana/      Provisioning do Grafana (datasource + dashboard)
 agents/       Playbooks para agentes de IA (criar cenário/jornada, avaliar resultados, evoluir)
-results/      Artefatos gerados (ignorados pelo Git)
+results/      Artefatos gerados (relatórios da entrega versionados no Git)
 ```
 
 > Referência rápida de todos os comandos: [`COMMANDS.md`](COMMANDS.md).
@@ -113,6 +113,10 @@ Cada execução cria `results/<data>-<perfil>/` com:
 | `raw.json.gz` | Stream completo de métricas, ponto a ponto |
 | `metrics.csv` | Métricas em CSV para planilhas/análises |
 | `metadata.txt` | Perfil, run_id/testid, commit, versão do k6, alvo, horários e exit code |
+
+Os relatórios (`console.log`, `metadata.txt`, `summary.json` e `summary.html`) são versionados
+para servir de evidência. `metrics.csv` e `raw.json.gz` ficam apenas locais por causa do tamanho
+gerado em execuções com 500 VUs.
 
 ## Validando scripts sem rodar carga
 

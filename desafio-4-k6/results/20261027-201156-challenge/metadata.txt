@@ -1,0 +1,12 @@
+profile=challenge
+run_id=20261027-201156
+testid=challenge-20261027-201156
+started_at=2026-10-27T20:11:56-03:00
+k6=k6 v2.0.0 (commit/8c3be52cc1, go1.26.3, linux/amd64)
+git_commit=n/d
+base_url=https://jsonplaceholder.typicode.com
+influx=http://localhost:8086/k6
+extra_flags=
+finished_at=2026-10-27T20:17:00-03:00
+exit_code=0
+result=valido

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Relatório k6 — challenge</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; margin: 0; padding: 24px; background: #f6f5f1; color: #17181c; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+  h1 { font-size: 20px; margin: 0; }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; margin: 28px 0 10px; }
+  .meta { color: #6b6f76; font-size: 12px; line-height: 1.7; }
+  .pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+  .pill.ok { background: #d3f9d8; color: #237032; }
+  .pill.fail { background: #ffe3e3; color: #b02525; }
+  table { width: 100%; border-collapse: collapse; background: #fffdf8; border: 1px solid #ddd7ca; font-size: 12.5px; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid #eee9dd; }
+  th { background: #17181c; color: #fbf9f4; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+  tr:last-child td { border-bottom: none; }
+  code { background: #f0ede4; padding: 1px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Relatório de execução — perfil <code>challenge</code></h1>
+  <span class="pill ok">Todos os thresholds atendidos</span>
+</header>
+<div class="meta">
+  Alvo: <code>https://jsonplaceholder.typicode.com</code><br>
+  Gerado em: 2026-10-27T23:17:00.430Z &nbsp;|&nbsp; Diretório: <code>results/20261027-201156-challenge</code>
+</div>
+
+<h2>Thresholds</h2>
+<table>
+  <thead><tr><th>Métrica</th><th>Condição</th><th>Status</th></tr></thead>
+  <tbody>
+        <tr>
+          <td>dropped_iterations</td>
+          <td><code>count==0</code></td>
+          <td><span class="pill ok">OK</span></td>
+        </tr>
+        <tr>
+          <td>http_req_failed</td>
+          <td><code>rate&lt;0.01</code></td>
+          <td><span class="pill ok">OK</span></td>
+        </tr>
+        <tr>
+          <td>checks</td>
+          <td><code>rate&gt;0.99</code></td>
+          <td><span class="pill ok">OK</span></td>
+        </tr>
+        <tr>
+          <td>api_latency</td>
+          <td><code>p(95)&lt;800</code></td>
+          <td><span class="pill ok">OK</span></td>
+        </tr>
+        <tr>
+          <td>http_req_duration</td>
+          <td><code>p(95)&lt;800</code></td>
+          <td><span class="pill ok">OK</span></td>
+        </tr>
+        <tr>
+          <td>http_req_duration</td>
+          <td><code>p(99)&lt;1500</code></td>
+          <td><span class="pill ok">OK</span></td>
+        </tr></tbody>
+</table>
+
+<h2>Métricas</h2>
+<table>
+  <thead>
+    <tr><th>Métrica</th><th>Tipo</th><th>count</th><th>rate</th><th>avg</th><th>p95</th><th>p99</th><th>max</th></tr>
+  </thead>
+  <tbody>
+        <tr>
+          <td>api_latency</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>77.0</td>
+          <td>172.9</td>
+          <td>462.1</td>
+          <td>8614.1</td>
+        </tr>
+        <tr>
+          <td>business_flows</td>
+          <td>counter</td>
+          <td>62893</td>
+          <td>207.01</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>checks</td>
+          <td>rate</td>
+          <td>—</td>
+          <td>1.00</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>create_journey_duration</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>186.6</td>
+          <td>238.0</td>
+          <td>550.8</td>
+          <td>3353.0</td>
+        </tr>
+        <tr>
+          <td>create_response_time</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>186.6</td>
+          <td>238.0</td>
+          <td>550.8</td>
+          <td>3353.0</td>
+        </tr>
+        <tr>
+          <td>data_received</td>
+          <td>counter</td>
+          <td>2376305304</td>
+          <td>7821365.23</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>data_sent</td>
+          <td>counter</td>
+          <td>32375618</td>
+          <td>106561.03</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>dropped_iterations</td>
+          <td>counter</td>
+          <td>0</td>
+          <td>0.00</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>failed_reads</td>
+          <td>counter</td>
+          <td>133</td>
+          <td>0.44</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>get_journey_duration</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>200.9</td>
+          <td>272.0</td>
+          <td>1231.5</td>
+          <td>9554.0</td>
+        </tr>
+        <tr>
+          <td>group_duration</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>77.5</td>
+          <td>173.1</td>
+          <td>467.5</td>
+          <td>8614.2</td>
+        </tr>
+        <tr>
+          <td>http_req_blocked</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>0.3</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>935.4</td>
+        </tr>
+        <tr>
+          <td>http_req_connecting</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>0.1</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>61.9</td>
+        </tr>
+        <tr>
+          <td>http_req_duration</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>77.0</td>
+          <td>172.9</td>
+          <td>462.1</td>
+          <td>8614.1</td>
+        </tr>
+        <tr>
+          <td>http_req_duration{expected_response:true}</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>77.0</td>
+          <td>172.9</td>
+          <td>462.1</td>
+          <td>8614.1</td>
+        </tr>
+        <tr>
+          <td>http_req_failed</td>
+          <td>rate</td>
+          <td>—</td>
+          <td>0.00</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>http_req_receiving</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>3.3</td>
+          <td>11.0</td>
+          <td>24.3</td>
+          <td>3988.9</td>
+        </tr>
+        <tr>
+          <td>http_req_sending</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>0.0</td>
+          <td>0.1</td>
+          <td>0.1</td>
+          <td>820.1</td>
+        </tr>
+        <tr>
+          <td>http_req_tls_handshaking</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>0.2</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>864.9</td>
+        </tr>
+        <tr>
+          <td>http_req_waiting</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>73.6</td>
+          <td>172.5</td>
+          <td>455.8</td>
+          <td>8614.0</td>
+        </tr>
+        <tr>
+          <td>http_reqs</td>
+          <td>counter</td>
+          <td>315125</td>
+          <td>1037.20</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>iteration_duration</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>2389.9</td>
+          <td>3283.5</td>
+          <td>4133.9</td>
+          <td>11085.1</td>
+        </tr>
+        <tr>
+          <td>iterations</td>
+          <td>counter</td>
+          <td>63025</td>
+          <td>207.44</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>read_response_time</td>
+          <td>trend</td>
+          <td>—</td>
+          <td>—</td>
+          <td>50.2</td>
+          <td>57.0</td>
+          <td>435.0</td>
+          <td>8614.0</td>
+        </tr>
+        <tr>
+          <td>successful_creates</td>
+          <td>counter</td>
+          <td>63025</td>
+          <td>207.44</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>successful_reads</td>
+          <td>counter</td>
+          <td>251967</td>
+          <td>829.32</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>vus</td>
+          <td>gauge</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>500.0</td>
+        </tr>
+        <tr>
+          <td>vus_max</td>
+          <td>gauge</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>500.0</td>
+        </tr></tbody>
+</table>
+</body>
+</html>

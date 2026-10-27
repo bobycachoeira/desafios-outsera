@@ -3,8 +3,17 @@ node_modules/
 .env.*
 !.env.example
 
-results/*
-!results/.gitkeep
-
 *.log
 .DS_Store
+
+# Resultados versionados para a entrega do desafio.
+# As métricas brutas ficam fora do Git por causa do tamanho (CSV > 1 GB).
+results/*
+!results/.gitkeep
+!results/*/
+!results/*/console.log
+!results/*/metadata.txt
+!results/*/summary.json
+!results/*/summary.html
+results/*/metrics.csv
+results/*/raw.json.gz
