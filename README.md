@@ -13,6 +13,21 @@ Estrutura inicial dos projetos do desafio de automação de testes da Outsera.
 
 > Desafio 5 (mobile) não será realizado.
 
+## CI/CD
+
+Os workflows do GitHub Actions ficam na raiz para executar cada projeto conforme os arquivos
+alterados:
+
+```
+.github/workflows/
+├── api-tests.yml
+├── e2e-tests.yml
+└── k6-load.yml
+```
+
+O k6 roda `smoke` em push/PR e permite escolher `load` ou `challenge` na execução manual.
+Os relatórios são publicados como artifacts de cada workflow.
+
 ## Como usar
 
 Cada projeto possui seu próprio `README.md` com instruções de instalação e execução.

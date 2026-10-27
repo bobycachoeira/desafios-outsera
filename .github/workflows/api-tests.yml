@@ -3,8 +3,17 @@ name: API Tests
 on:
   push:
     branches: [main]
+    paths:
+      - 'desafio-1-api/**'
+      - '.github/workflows/api-tests.yml'
   pull_request:
+    paths:
+      - 'desafio-1-api/**'
+      - '.github/workflows/api-tests.yml'
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   api-tests:
@@ -27,3 +36,4 @@ jobs:
         with:
           name: api-report
           path: desafio-1-api/results/
+          if-no-files-found: ignore
