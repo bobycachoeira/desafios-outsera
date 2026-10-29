@@ -41,4 +41,4 @@ máquina de desenvolvimento. No CI, a evidência fica nos arquivos publicados co
 
 - `package-lock.json` nos projetos 1 e 2 (usados pelo `npm ci`).
 - Testes implementados nos desafios 1 e 2.
-- Para E2E, uma aplicação acessível via `BASE_URL` ou variável configurada no repositório.
+- Para E2E, acesso ao Automation Exercise (ou `AUTOMATION_BASE_URL` configurada no repositório).
