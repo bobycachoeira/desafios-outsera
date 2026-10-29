@@ -37,3 +37,20 @@ When('tento confirmar o pedido sem preencher os dados de pagamento', async funct
 Then('devo permanecer na página de pagamento', async function () {
   await this.page.waitForURL(/\/payment$/);
 });
+
+When('acesso o carrinho vazio', async function () {
+  this.automationProductsPage = new AutomationProductsPage(this.page, this.automationURL);
+  await this.automationProductsPage.openCartPage();
+});
+
+Then('devo ver o carrinho vazio', async function () {
+  await this.automationProductsPage.expectEmptyCart();
+});
+
+Then('não devo ver a opção de checkout', async function () {
+  await this.automationProductsPage.expectCheckoutUnavailable();
+});
+
+When('preencho os dados de pagamento sem o número do cartão', async function () {
+  await this.automationCheckoutPage.payWithoutCardNumber();
+});

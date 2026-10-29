@@ -24,3 +24,20 @@ Funcionalidade: Checkout em e-commerce de exemplo
     Quando clico em place order
     E tento confirmar o pedido sem preencher os dados de pagamento
     Então devo permanecer na página de pagamento
+
+  Cenário: Não iniciar checkout com carrinho vazio
+    Dado que existe um cliente na Automation Exercise
+    Quando faço login na Automation Exercise
+    E acesso o carrinho vazio
+    Então devo ver o carrinho vazio
+    E não devo ver a opção de checkout
+
+  Cenário: Não finalizar compra sem número do cartão
+    Dado que existe um cliente na Automation Exercise
+    Quando faço login na Automation Exercise
+    E adiciono um produto ao carrinho
+    E inicio o checkout
+    Então devo ver o resumo do pedido
+    Quando clico em place order
+    E preencho os dados de pagamento sem o número do cartão
+    Então devo permanecer na página de pagamento

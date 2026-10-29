@@ -9,3 +9,15 @@ When('acesso o formulário de contato', async function () {
 Then('devo ver os campos do formulário de contato', async function () {
   await this.automationContactPage.expectForm();
 });
+
+When('preencho nome, assunto e mensagem sem email', async function () {
+  await this.automationContactPage.fillFormWithoutEmail();
+});
+
+When('clico em enviar', async function () {
+  await this.automationContactPage.submit();
+});
+
+Then('devo permanecer no formulário de contato com o email inválido', async function () {
+  await this.automationContactPage.expectEmailInvalid();
+});
