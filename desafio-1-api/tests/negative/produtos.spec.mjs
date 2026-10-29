@@ -1,3 +1,4 @@
+import { expectJsonResponse } from '../../helpers/assertions.mjs';
 import { api } from '../../helpers/api-client.mjs';
 import { createProduct } from '../../helpers/products.api.mjs';
 import { createSession } from '../../helpers/session.mjs';
@@ -21,7 +22,7 @@ describe('Produtos — cenários negativos', () => {
   test('POST /produtos exige autenticação', async () => {
     const response = await api.post('/produtos').send(productData());
 
-    expect(response.status).toBe(401);
+    expectJsonResponse(response, 401);
     expect(response.body.message).toMatch(/Token de acesso/);
   });
 
@@ -31,21 +32,21 @@ describe('Produtos — cenários negativos', () => {
       .set({ Authorization: 'Bearer token-invalido' })
       .send(productData());
 
-    expect(response.status).toBe(401);
+    expectJsonResponse(response, 401);
     expect(response.body.message).toMatch(/Token de acesso/);
   });
 
   test('POST /produtos exige perfil administrador', async () => {
     const response = await createProduct(customerSession.token, productData());
 
-    expect(response.status).toBe(403);
+    expectJsonResponse(response, 403);
     expect(response.body.message).toBe('Rota exclusiva para administradores');
   });
 
   test('POST /produtos valida campos obrigatórios', async () => {
     const response = await createProduct(adminSession.token, {});
 
-    expect(response.status).toBe(400);
+    expectJsonResponse(response, 400);
     expect(response.body).toMatchObject({
       nome: 'nome é obrigatório',
       preco: 'preco é obrigatório',

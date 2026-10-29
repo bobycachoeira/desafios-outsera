@@ -7,7 +7,7 @@ Testes de API com **Jest + Supertest** contra a API pública do
 
 **Positivos (`tests/positive`)**
 - Login e cadastro de usuários.
-- Consulta, atualização e listagem de usuários.
+- Consulta, atualização, listagem e exclusão de usuários.
 - Cadastro, consulta, atualização e exclusão de produtos.
 - Criação de carrinho e conclusão da compra.
 
@@ -19,7 +19,7 @@ Testes de API com **Jest + Supertest** contra a API pública do
 - Carrinho sem token, produto inexistente e carrinho duplicado.
 - Segurança: token de outro usuário não conclui o carrinho.
 
-Todos os testes validam **status code**, **headers** e **corpo** da resposta.
+Todos os testes validam **status code**, **corpo** e **headers JSON**. A validação de headers usa um helper compartilhado; o caso de JSON malformado é a exceção, pois a API não devolve o header de CORS nessa resposta.
 
 ## Estrutura
 
@@ -50,6 +50,8 @@ npm test
 ```
 
 O relatório HTML é gerado em `results/report.html`.
+
+Resultado atual: **29 testes passando**.
 
 ## Variáveis
 

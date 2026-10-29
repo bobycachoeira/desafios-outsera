@@ -1,3 +1,4 @@
+import { expectJsonResponse } from '../../helpers/assertions.mjs';
 import { api } from '../../helpers/api-client.mjs';
 import {
   cancelPurchase,
@@ -39,7 +40,7 @@ describe('Carrinhos — cenários negativos', () => {
       produtos: [{ idProduto: 'aaaaaaaaaaaaaaaa', quantidade: 1 }],
     });
 
-    expect(response.status).toBe(400);
+    expectJsonResponse(response, 400);
     expect(response.body.message).toBe('Produto não encontrado');
   });
 
@@ -52,7 +53,7 @@ describe('Carrinhos — cenários negativos', () => {
       produtos: [{ idProduto: product.id, quantidade: 1 }],
     });
 
-    expect(response.status).toBe(400);
+    expectJsonResponse(response, 400);
     expect(response.body.message).toBe('Não é permitido ter mais de 1 carrinho');
 
     await finishPurchase(customerSession.token);
@@ -63,14 +64,14 @@ describe('Carrinhos — cenários negativos', () => {
       .post('/carrinhos')
       .send({ produtos: [{ idProduto: product.id, quantidade: 1 }] });
 
-    expect(response.status).toBe(401);
+    expectJsonResponse(response, 401);
     expect(response.body.message).toMatch(/Token de acesso/);
   });
 
   test('DELETE /carrinhos/concluir-compra exige autenticação', async () => {
     const response = await api.delete('/carrinhos/concluir-compra');
 
-    expect(response.status).toBe(401);
+    expectJsonResponse(response, 401);
     expect(response.body.message).toMatch(/Token de acesso/);
   });
 
@@ -81,11 +82,11 @@ describe('Carrinhos — cenários negativos', () => {
 
     const attempt = await finishPurchase(otherCustomerSession.token);
 
-    expect(attempt.status).toBe(200);
+    expectJsonResponse(attempt, 200);
     expect(attempt.body.message).toBe('Não foi encontrado carrinho para esse usuário');
 
     const current = await getCart(created.body._id);
-    expect(current.status).toBe(200);
+    expectJsonResponse(current, 200);
     expect(current.body._id).toBe(created.body._id);
 
     await finishPurchase(customerSession.token);

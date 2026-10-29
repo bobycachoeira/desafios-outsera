@@ -1,3 +1,4 @@
+import { expectJsonResponse } from '../../helpers/assertions.mjs';
 import { login } from '../../helpers/auth.api.mjs';
 import {
   createUser,
@@ -24,9 +25,7 @@ describe('Usuários e login', () => {
   test('GET /usuarios retorna lista e headers JSON', async () => {
     const response = await listUsers();
 
-    expect(response.status).toBe(200);
-    expect(response.headers['content-type']).toMatch(/application\/json/);
-    expect(response.headers['access-control-allow-origin']).toBe('*');
+    expectJsonResponse(response, 200);
     expect(response.body).toHaveProperty('quantidade');
     expect(Array.isArray(response.body.usuarios)).toBe(true);
   });
@@ -35,7 +34,7 @@ describe('Usuários e login', () => {
     const data = customerData();
     const response = await createUser(data);
 
-    expect(response.status).toBe(201);
+    expectJsonResponse(response, 201);
     expect(response.body.message).toBe('Cadastro realizado com sucesso');
     expect(response.body._id).toEqual(expect.any(String));
 
@@ -45,7 +44,7 @@ describe('Usuários e login', () => {
   test('GET /usuarios/:id retorna o usuário cadastrado', async () => {
     const response = await getUser(admin._id);
 
-    expect(response.status).toBe(200);
+    expectJsonResponse(response, 200);
     expect(response.body).toMatchObject({
       nome: admin.nome,
       email: admin.email,
@@ -61,7 +60,7 @@ describe('Usuários e login', () => {
       administrador: admin.administrador,
     });
 
-    expect(response.status).toBe(200);
+    expectJsonResponse(response, 200);
     expect(response.body.message).toBe('Registro alterado com sucesso');
 
     const updated = await getUser(admin._id);
@@ -75,17 +74,17 @@ describe('Usuários e login', () => {
 
     const response = await deleteUser(created.body._id);
 
-    expect(response.status).toBe(200);
+    expectJsonResponse(response, 200);
     expect(response.body.message).toBe('Registro excluído com sucesso');
 
     const removed = await getUser(created.body._id);
-    expect(removed.status).toBe(400);
+    expectJsonResponse(removed, 400);
   });
 
   test('POST /login retorna token de acesso', async () => {
     const response = await login(admin.email, admin.password);
 
-    expect(response.status).toBe(200);
+    expectJsonResponse(response, 200);
     expect(response.body.message).toBe('Login realizado com sucesso');
     expect(response.body.authorization).toMatch(/^Bearer /);
   });

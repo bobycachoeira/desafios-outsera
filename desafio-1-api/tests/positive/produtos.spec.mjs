@@ -1,3 +1,4 @@
+import { expectJsonResponse } from '../../helpers/assertions.mjs';
 import {
   createProduct,
   deleteProduct,
@@ -28,7 +29,7 @@ describe('Produtos', () => {
     const data = productData(overrides);
     const response = await createProduct(session.token, data);
 
-    expect(response.status).toBe(201);
+    expectJsonResponse(response, 201);
     createdIds.push(response.body._id);
 
     return { data, id: response.body._id };
@@ -38,14 +39,14 @@ describe('Produtos', () => {
     const response = await createProduct(session.token, productData());
     createdIds.push(response.body._id);
 
-    expect(response.status).toBe(201);
+    expectJsonResponse(response, 201);
     expect(response.body.message).toBe('Cadastro realizado com sucesso');
   });
 
   test('GET /produtos retorna a lista de produtos', async () => {
     const response = await listProducts();
 
-    expect(response.status).toBe(200);
+    expectJsonResponse(response, 200);
     expect(response.body).toHaveProperty('quantidade');
     expect(Array.isArray(response.body.produtos)).toBe(true);
   });
@@ -54,7 +55,7 @@ describe('Produtos', () => {
     const product = await createNewProduct();
     const response = await getProduct(product.id);
 
-    expect(response.status).toBe(200);
+    expectJsonResponse(response, 200);
     expect(response.body).toMatchObject({
       nome: product.data.nome,
       preco: product.data.preco,
@@ -68,7 +69,7 @@ describe('Produtos', () => {
       nome: 'Produto Atualizado',
     });
 
-    expect(response.status).toBe(200);
+    expectJsonResponse(response, 200);
     expect(response.body.message).toBe('Registro alterado com sucesso');
 
     const updated = await getProduct(product.id);
@@ -79,10 +80,10 @@ describe('Produtos', () => {
     const product = await createNewProduct();
     const response = await deleteProduct(product.id, session.token);
 
-    expect(response.status).toBe(200);
+    expectJsonResponse(response, 200);
     expect(response.body.message).toBe('Registro excluído com sucesso');
 
     const removed = await getProduct(product.id);
-    expect(removed.status).toBe(400);
+    expectJsonResponse(removed, 400);
   });
 });
