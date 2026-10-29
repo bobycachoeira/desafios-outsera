@@ -1,17 +1,18 @@
-# k6 Example
+# Desafio 4 — Testes de Carga (k6)
 
-Projeto de exemplo de **testes de carga com k6** — fins de estudo e portfólio.
-Cada execução gera artefatos completos (JSON, CSV, HTML e log) para análise posterior,
-com opção de dashboards em tempo real via Grafana + InfluxDB.
+Projeto de testes de carga da entrega do desafio Outsera. A base é o
+[k6-example](https://github.com/bobycachoeira/k6-example), projeto de estudos que desenvolvi com
+perfis, jornadas, relatórios e observabilidade via Grafana + InfluxDB.
 
-> **Entrega do desafio Outsera:** o cenário `challenge` foi incluído neste projeto para atender
-> ao item de testes de carga do desafio (500 usuários simultâneos por 5 minutos). O restante da
-> estrutura — perfis, jornadas, relatórios, CI e observabilidade — vem do projeto de exemplo de
-> testes de carga que desenvolvi, mantido aqui sem alterações para servir de base à execução.
+Além da estrutura herdada do projeto de exemplo, esta versão tem as particularidades do desafio:
 
-> Projeto independente, com código 100% original. O alvo padrão é a API pública de
-> demonstração [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com) —
-> nenhuma dependência de serviços internos.
+- perfil `challenge` com **500 VUs por 5 minutos**;
+- perfil `ci` com **15 VUs por 30 segundos** para o pipeline;
+- relatório executivo em PDF e resultados versionados para avaliação;
+- workflow no GitHub Actions sem envio de métricas ao Grafana local.
+
+O alvo padrão continua sendo a API pública de demonstração
+[jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com).
 
 ## Estrutura
 
