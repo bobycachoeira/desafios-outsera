@@ -7,6 +7,7 @@ on:
       - 'desafio-4-k6/**'
       - '.github/workflows/k6-load.yml'
   pull_request:
+    branches: [main]
     paths:
       - 'desafio-4-k6/**'
       - '.github/workflows/k6-load.yml'

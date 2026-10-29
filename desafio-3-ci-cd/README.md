@@ -18,7 +18,7 @@ Cada workflow usa `working-directory` apontando para a pasta do projeto correspo
 
 ## Gatilhos
 
-- `push` na `main` e `pull_request`: executa apenas quando arquivos do projeto mudam (`paths`).
+- `push` na `main` e `pull_request` para a `main`: executa apenas quando arquivos do projeto mudam (`paths`).
 - `workflow_dispatch`: execução manual.
 - `all-tests.yml`: execução manual que chama API, E2E e k6 de uma vez.
 - `k6-load.yml`: por padrão roda `ci` (15 VUs por 30s); `smoke`, `load` e `challenge` (500 VUs

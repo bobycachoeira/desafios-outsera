@@ -27,7 +27,7 @@ alterados:
 ```
 
 O `all-tests.yml` permite executar os três workflows manualmente de uma vez.
-O k6 roda `ci` (15 VUs por 30s) em push/PR e permite escolher `smoke`, `load` ou `challenge` na
+O k6 roda `ci` (15 VUs por 30s) em push na `main` e PR para a `main` e permite escolher `smoke`, `load` ou `challenge` na
 execução manual. Os relatórios são publicados como artifacts de cada workflow. O pipeline do k6
 não envia métricas para o Grafana: a stack `docker compose` é local e não existe no runner do
 GitHub.
