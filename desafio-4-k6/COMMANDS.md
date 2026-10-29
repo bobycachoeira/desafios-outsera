@@ -206,16 +206,26 @@ cat AGENTS.md                  # contexto para agentes de IA (arquitetura e inva
 ## 10. CI (GitHub Actions)
 
 ```bash
-gh run list        # histórico das execuções (check + ci a cada push/PR)
-gh run watch       # acompanha a execução mais recente
-gh run view        # detalhes da última execução
+gh run list --workflow "k6 Load Tests"   # execuções do workflow do k6
+gh run watch                             # acompanha a execução mais recente
+gh run view <run-id>                     # detalhes de uma execução
+
+# Disparo manual
+gh workflow run "k6 Load Tests" --ref main -f profile=ci
+gh workflow run "k6 Load Tests" --ref main -f profile=challenge
+
+# Disparar API + E2E + k6 de uma vez
+gh workflow run "All Tests" --ref main
 ```
+
+Os workflows de API, E2E e k6 rodam em push na `main` e PR para a `main`, apenas quando a pasta
+do projeto ou o próprio workflow mudam. O `k6-load.yml` usa o perfil `ci` no automático.
 
 Baixar os artefatos direto pelo CLI (sem navegador):
 
 ```bash
-gh run download -n k6-resultados -D /tmp/k6-resultados   # última execução
-gh run download <run-id> -n k6-resultados                # execução específica
+gh run download <run-id> -n k6-report-ci -D /tmp/k6-report-ci
+gh run download <run-id> -n k6-report-challenge -D /tmp/k6-report-challenge
 ```
 
 > O Chrome às vezes bloqueia o `.zip` de artefatos do GitHub como "arquivo perigoso"

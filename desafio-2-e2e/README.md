@@ -26,6 +26,8 @@ confirmação do pedido.
 - Compra sem número do cartão, com os demais campos preenchidos.
 - Tentativa de iniciar checkout com o carrinho vazio.
 
+Resultado atual: **12 cenários / 65 steps**.
+
 ## Estrutura
 
 ```
@@ -47,7 +49,11 @@ Cada página tem uma classe em `pages/` com todos os locators centralizados no `
 export class AutomationCheckoutPage {
   constructor(page) {
     this.page = page;
+    this.nameOnCard = page.locator('[data-qa="name-on-card"]');
     this.cardNumber = page.locator('[data-qa="card-number"]');
+    this.cvc = page.locator('[data-qa="cvc"]');
+    this.expiryMonth = page.locator('[data-qa="expiry-month"]');
+    this.expiryYear = page.locator('[data-qa="expiry-year"]');
     this.payButton = page.locator('[data-qa="pay-button"]');
     this.confirmation = page.getByText(
       'Congratulations! Your order has been confirmed!'

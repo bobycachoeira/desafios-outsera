@@ -39,7 +39,8 @@ As jornadas ficam em `lib/journey.js` e podem ser compostas de três formas:
 | `fullJourney()` | Leituras + escrita, contabiliza um fluxo de negócio e pausa entre iterações |
 
 O perfil `smoke` executa `getJourney()` e `createJourney()` separadamente — exemplo de uso
-individual de cada jornada. Os perfis `load`, `stress` e `spike` executam a `fullJourney()`.
+individual de cada jornada. Os perfis `ci`, `load`, `challenge`, `stress` e `spike` executam a
+`fullJourney()`.
 
 ## Adicionando uma nova jornada
 
@@ -138,7 +139,8 @@ Valida tudo **sem disparar requisições** contra o alvo:
   exportadas, executor e duração/estágios de cada cenário, thresholds mínimos;
 - sintaxe do `scripts/run.sh`.
 
-O check roda no CI antes do smoke e requer `python3` (apenas para ler o JSON do `k6 inspect`).
+O check roda no CI antes da execução do perfil `ci` e requer `python3` (apenas para ler o JSON
+do `k6 inspect`).
 
 ## Observabilidade com Grafana
 
@@ -308,8 +310,9 @@ recorder nos passos da jornada. Passo a passo em `agents/criar-jornada.md`.
 ## CI
 
 O workflow `.github/workflows/k6-load.yml` roda `./scripts/check.sh` (validações sem carga) e o
-perfil `ci` (15 VUs por 30s) a cada push/PR. Na execução manual é possível escolher `smoke`,
-`load` ou `challenge`. Os relatórios são publicados como artifacts do workflow.
+perfil `ci` (15 VUs por 30s) em push na `main` e PR para a `main`, quando `desafio-4-k6/**` ou o
+próprio workflow mudam. Na execução manual é possível escolher `smoke`, `ci`, `load` ou
+`challenge`. Os relatórios são publicados como artifacts do workflow.
 
 O perfil `ci` existe para validar o pipeline sem gerar carga relevante contra a API pública. O
 teste completo do desafio (`challenge`) continua sendo executado manualmente.

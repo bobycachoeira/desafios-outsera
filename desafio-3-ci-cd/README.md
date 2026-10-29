@@ -86,8 +86,8 @@ Execução validada:
 
 | Workflow | Resultado |
 |---|---|
-| [API Tests](https://github.com/bobycachoeira/desafios-outsera/actions/runs/40906107004) | success |
-| [E2E Tests](https://github.com/bobycachoeira/desafios-outsera/actions/runs/40906107322) | success |
+| [API Tests](https://github.com/bobycachoeira/desafios-outsera/actions/runs/40914026296) | success |
+| [E2E Tests](https://github.com/bobycachoeira/desafios-outsera/actions/runs/40916459547) | success |
 | [k6 Load Tests](https://github.com/bobycachoeira/desafios-outsera/actions/runs/40906106982) | success |
 | [All Tests](https://github.com/bobycachoeira/desafios-outsera/actions/runs/40905731286) | success |
 
