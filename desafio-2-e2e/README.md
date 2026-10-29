@@ -28,7 +28,7 @@ features/         cenários em Gherkin (português)
 steps/            implementação dos passos
 pages/            Page Objects
 support/          World, hooks e ciclo do navegador
-results/          relatórios HTML/JSON e screenshots de falha
+results/          relatórios HTML/JSON e screenshots dos cenários
 ```
 
 As contas são criadas pela API do Automation Exercise antes de cada cenário e removidas no final.
@@ -46,7 +46,11 @@ npm run test:e2e
 Relatórios:
 - `results/cucumber-report.html`
 - `results/cucumber-report.json`
-- `results/screenshots/` (somente em falhas)
+- `results/screenshots/` (um screenshot por cenário)
+
+Neste desafio, o screenshot é capturado e anexado ao relatório em **todos os cenários**, inclusive
+nos que passam, para servir de evidência visual. Em um projeto de produção, a recomendação é
+capturar apenas em falhas ou em passos críticos, evitando volume desnecessário de artefatos.
 
 ## Variáveis
 

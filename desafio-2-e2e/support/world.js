@@ -1,7 +1,8 @@
-import { setWorldConstructor } from '@cucumber/cucumber';
+import { setWorldConstructor, World } from '@cucumber/cucumber';
 
-export class AutomationExerciseWorld {
-  constructor() {
+export class AutomationExerciseWorld extends World {
+  constructor(options) {
+    super(options);
     this.automationURL = process.env.AUTOMATION_BASE_URL || 'https://www.automationexercise.com';
     this.automationUsersToDelete = [];
   }

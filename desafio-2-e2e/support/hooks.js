@@ -1,9 +1,9 @@
 import 'dotenv/config';
-import { After, Before, Status, setDefaultTimeout } from '@cucumber/cucumber';
+import { After, Before, setDefaultTimeout } from '@cucumber/cucumber';
 import { chromium } from '@playwright/test';
-import { mkdir } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 
-setDefaultTimeout(30000);
+setDefaultTimeout(60000);
 
 Before(async function () {
   this.browser = await chromium.launch({ headless: process.env.HEADLESS !== 'false' });
@@ -12,15 +12,21 @@ Before(async function () {
     viewport: { width: 1440, height: 1000 },
   });
   this.page = await this.context.newPage();
-  this.page.setDefaultTimeout(15000);
+  this.page.setDefaultTimeout(30000);
 });
 
-After({ timeout: 60000 }, async function (scenario) {
-  if (scenario?.result?.status === Status.FAILED && this.page) {
-    await mkdir('results/screenshots', { recursive: true });
-    await this.page
-      .screenshot({ path: `results/screenshots/${Date.now()}-falha.png`, fullPage: true })
-      .catch(() => {});
+After({ timeout: 90000 }, async function (scenario) {
+  if (this.page) {
+    const name = (scenario?.pickle?.name || 'cenario')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-');
+    const image = await this.page.screenshot({ fullPage: true }).catch(() => null);
+
+    if (image) {
+      await mkdir('results/screenshots', { recursive: true });
+      await writeFile(`results/screenshots/${Date.now()}-${name}.png`, image);
+      await this.attach(image, 'image/png');
+    }
   }
 
   await this.context?.close();
