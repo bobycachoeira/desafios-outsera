@@ -11,7 +11,6 @@ Estrutura inicial dos projetos do desafio de automação de testes da Outsera.
 | `desafio-3-ci-cd` | Pipeline de CI/CD | GitHub Actions |
 | `desafio-4-k6` | Testes de carga (500 usuários por 5 min) | k6 |
 
-> Desafio 5 (mobile) não será realizado.
 
 ## CI/CD
 
