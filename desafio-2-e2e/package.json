@@ -5,10 +5,11 @@
   "type": "module",
   "description": "Testes End-to-End (Playwright + Cucumber) — Desafio Outsera.",
   "scripts": {
-    "test": "playwright test",
-    "test:e2e": "playwright test",
+    "test": "cucumber-js",
+    "test:e2e": "cucumber-js",
     "test:cucumber": "cucumber-js",
-    "report": "playwright show-report results/html-report"
+    "test:playwright": "playwright test",
+    "report": "echo \"Abra results/cucumber-report.html\""
   },
   "devDependencies": {
     "@cucumber/cucumber": "^11.0.0",
