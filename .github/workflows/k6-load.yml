@@ -17,6 +17,13 @@ on:
         type: choice
         options: [smoke, ci, load, challenge]
         default: ci
+  workflow_call:
+    inputs:
+      profile:
+        description: Perfil de execução do k6
+        type: string
+        required: false
+        default: ci
 
 permissions:
   contents: read
@@ -28,7 +35,7 @@ jobs:
       run:
         working-directory: desafio-4-k6
     env:
-      K6_PROFILE: ${{ github.event.inputs.profile || 'ci' }}
+      K6_PROFILE: ${{ inputs.profile || github.event.inputs.profile || 'ci' }}
     steps:
       - uses: actions/checkout@v4
       - uses: grafana/setup-k6-action@v1

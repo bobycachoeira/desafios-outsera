@@ -10,7 +10,8 @@ Os workflows ficam na raiz do repositório, pois o GitHub Actions só lê `.gith
 .github/workflows/
 ├── api-tests.yml   # desafio-1-api (Jest + Supertest)
 ├── e2e-tests.yml   # desafio-2-e2e (Playwright + Cucumber)
-└── k6-load.yml     # desafio-4-k6 (k6)
+├── k6-load.yml     # desafio-4-k6 (k6)
+└── all-tests.yml   # execução manual dos três workflows
 ```
 
 Cada workflow usa `working-directory` apontando para a pasta do projeto correspondente.
@@ -19,6 +20,7 @@ Cada workflow usa `working-directory` apontando para a pasta do projeto correspo
 
 - `push` na `main` e `pull_request`: executa apenas quando arquivos do projeto mudam (`paths`).
 - `workflow_dispatch`: execução manual.
+- `all-tests.yml`: execução manual que chama API, E2E e k6 de uma vez.
 - `k6-load.yml`: por padrão roda `ci` (15 VUs por 30s); `smoke`, `load` e `challenge` (500 VUs
   por 5 min) podem ser escolhidos manualmente para não impactar todo commit.
 

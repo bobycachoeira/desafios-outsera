@@ -1,0 +1,19 @@
+name: All Tests
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  api:
+    uses: ./.github/workflows/api-tests.yml
+
+  e2e:
+    uses: ./.github/workflows/e2e-tests.yml
+
+  k6:
+    uses: ./.github/workflows/k6-load.yml
+    with:
+      profile: ci
