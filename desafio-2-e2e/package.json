@@ -8,11 +8,14 @@
     "test": "cucumber-js",
     "test:e2e": "cucumber-js",
     "test:cucumber": "cucumber-js",
+    "test:e2e:dev": "cross-env DOTENV_CONFIG_PATH=.env.dev cucumber-js",
+    "test:e2e:qa": "cross-env DOTENV_CONFIG_PATH=.env.qa cucumber-js",
     "report": "echo \"Abra results/cucumber-report.html\""
   },
   "devDependencies": {
     "@cucumber/cucumber": "^11.0.0",
     "@playwright/test": "^1.50.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.0"
   }
 }
