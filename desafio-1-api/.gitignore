@@ -2,4 +2,6 @@ node_modules/
 results/*
 !results/.gitkeep
 .env
+.env.dev
+.env.qa
 *.log

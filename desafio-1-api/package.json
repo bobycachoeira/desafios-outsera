@@ -8,7 +8,9 @@
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --runInBand",
     "test:positive": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --runInBand tests/positive",
     "test:negative": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --runInBand tests/negative",
-    "test:report": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --runInBand --reporters=default --reporters=jest-html-reporters"
+    "test:report": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --runInBand --reporters=default --reporters=jest-html-reporters",
+    "test:dev": "cross-env NODE_OPTIONS=--experimental-vm-modules DOTENV_CONFIG_PATH=.env.dev jest --runInBand",
+    "test:qa": "cross-env NODE_OPTIONS=--experimental-vm-modules DOTENV_CONFIG_PATH=.env.qa jest --runInBand"
   },
   "devDependencies": {
     "@types/jest": "^29.5.0",
