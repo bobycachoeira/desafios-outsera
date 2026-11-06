@@ -41,7 +41,41 @@ results/              relatório HTML gerado pelo Jest
 As chamadas de API ficam separadas das factories de dados. Os testes importam as duas camadas e
 mantêm apenas a orquestração e as assertions.
 
+## Massas dinâmicas
+
+As factories geram dados únicos por execução e aceitam `overrides`, permitindo variações sem
+duplicar payloads:
+
+```js
+import { customerData, productData } from '../fixtures/factories.mjs';
+
+customerData();                                  // email único a cada chamada
+customerData({ administrador: 'true' });         // sobrescreve campos
+productData({ preco: 50, quantidade: 1 });       // massa específica do teste
+```
+
+Casos tabulares usam `test.each`, como na validação dos campos obrigatórios de usuário:
+
+```js
+import { customerData, requiredUserFields } from '../fixtures/factories.mjs';
+
+test.each(requiredUserFields)('POST /usuarios exige o campo $field', async ({ field, message }) => {
+  const payload = customerData();
+  delete payload[field];
+
+  const response = await createUser(payload);
+
+  expectJsonResponse(response, 400);
+  expect(response.body[field]).toBe(message);
+});
+```
+
+Cada linha do array vira um teste independente, com a massa e a mensagem esperada definidas no
+próprio caso.
+
 ## Como executar
+
+Requer Node.js 18+. Os scripts usam `cross-env`, então funcionam em Windows, Linux e macOS.
 
 ```bash
 npm ci
@@ -51,10 +85,26 @@ npm test
 
 O relatório HTML é gerado em `results/report.html`.
 
-Resultado atual: **29 testes passando**.
+Resultado atual: **33 testes passando**.
+
+## Ambientes
+
+A URL é lida de `API_BASE_URL`. Para alternar entre ambientes, crie os arquivos a partir dos
+exemplos e use os scripts correspondentes:
+
+```bash
+cp .env.dev.example .env.dev
+cp .env.qa.example .env.qa
+npm run test:dev
+npm run test:qa
+```
+
+Cada script carrega o `.env` do ambiente via `DOTENV_CONFIG_PATH`, sem alterar o `.env` padrão.
+A estrutura é a mesma para qualquer ambiente; só muda a `API_BASE_URL`.
 
 ## Variáveis
 
 | Variável | Padrão |
 |---|---|
 | `API_BASE_URL` | `https://serverest.dev` |
+| `DOTENV_CONFIG_PATH` | `.env` (definido pelos scripts de ambiente) |
