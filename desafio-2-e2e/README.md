@@ -9,24 +9,24 @@ confirmação do pedido.
 ## Cenários
 
 **Login (`features/login.feature`)**
-- Login válido.
-- Login com senha incorreta.
-- Login com usuário inexistente.
-- Login com campos em branco.
-- Login com email em formato inválido.
-- Login com senha em branco.
+- Esquema do Cenário “Login com cliente cadastrado”: válido, senha incorreta e senha em branco.
+- Esquema do Cenário “Login com email não cadastrado”.
+- Esquema do Cenário “Login com dados inválidos”: email em formato inválido e campos em branco.
+
+Os casos que só variam a massa/resultado usam `Esquema do Cenário` + `Exemplos`, evitando repetir
+o mesmo bloco em vários cenários. A senha válida vem da factory do usuário: nos `Exemplos`, o
+token `SENHA_DO_CLIENTE` é resolvido em runtime pelo step.
 
 **Navegação (`features/navegacao.feature`)**
 - Login e acesso ao formulário de contato.
 - Tentativa de enviar contato sem email.
 
 **Checkout (`features/checkout.feature`)**
-- Compra completa: login, produto no carrinho, checkout, pagamento e confirmação.
-- Compra sem dados de pagamento.
-- Compra sem número do cartão, com os demais campos preenchidos.
+- `Contexto` centraliza a criação do cliente e o login.
+- Esquema do Cenário “Finalizar compra”: dados válidos, sem número do cartão e sem dados.
 - Tentativa de iniciar checkout com o carrinho vazio.
 
-Resultado atual: **12 cenários / 65 steps**.
+Resultado atual: **12 cenários / 69 steps** (os `Esquema do Cenário` expandem para os exemplos).
 
 ## Estrutura
 
@@ -35,11 +35,34 @@ features/         cenários em Gherkin (português)
 steps/            implementação dos passos
 pages/            Page Objects
 support/          World, hooks e ciclo do navegador
+  factories.js    factories de dados dinâmicos (usuário, pagamento, contato)
 results/          relatórios HTML/JSON e screenshots dos cenários
 ```
 
 As contas são criadas pela API do Automation Exercise antes de cada cenário e removidas no final.
 Assim os testes não dependem de cadastros fixos.
+
+## Dados dinâmicos
+
+Os dados ficam fora dos Page Objects, em `support/factories.js`, com o mesmo padrão de `overrides`
+usado nos testes de API:
+
+```js
+import { contactData, paymentData, userData } from '../support/factories.js';
+
+userData();                          // email único por chamada
+paymentData({ cardNumber: '' });     // variação pontual
+contactData({ email: '' });          // formulário sem email
+
+await checkoutPage.fillPayment(paymentData());
+await checkoutPage.submitPayment();
+
+await checkoutPage.fillPayment(paymentData({ cardNumber: '' }));
+await checkoutPage.submitPayment();
+```
+
+Um dado criado para um teste pode ser reutilizado em outro importando a factory e passando
+`overrides`, sem duplicar valores dentro da página e sem depender de constantes soltas.
 
 ## Page Objects e locators
 
@@ -60,24 +83,25 @@ export class AutomationCheckoutPage {
     );
   }
 
-  async payWithValidData(data = {}) {
-    const payment = {
-      name: 'AE User',
-      cardNumber: '4111111111111111',
-      cvc: '123',
-      expiryMonth: '12',
-      expiryYear: '2030',
-      ...data,
-    };
-
+  async fillPayment(payment) {
     await this.nameOnCard.fill(payment.name);
     await this.cardNumber.fill(payment.cardNumber);
     await this.cvc.fill(payment.cvc);
     await this.expiryMonth.fill(payment.expiryMonth);
     await this.expiryYear.fill(payment.expiryYear);
-    await this.payButton.click();
+  }
 
+  async submitPayment() {
+    await this.payButton.click();
+  }
+
+  async expectConfirmation() {
     await expect(this.confirmation).toBeVisible({ timeout: 30000 });
+  }
+
+  async expectStillOnPaymentPage() {
+    await expect(this.page).toHaveURL(/\/payment$/);
+    expect(await this.cardNumber.evaluate((element) => element.checkValidity())).toBe(false);
   }
 }
 ```
@@ -86,7 +110,7 @@ Regras adotadas:
 
 - locators ficam no `constructor`, como fonte única;
 - métodos expõem ações, não locators crus;
-- dados são parametrizáveis com defaults, permitindo variações sem duplicar código;
+- o Page Object recebe os dados; a origem da massa fica em `support/factories.js`;
 - getters ficam reservados para locators dinâmicos;
 - não há JSON externo de elementos; os seletores acompanham o comportamento da página;
 - se um bloco for reutilizado por várias páginas, ele vira um Component Object em
@@ -94,12 +118,30 @@ Regras adotadas:
 
 ## Como executar
 
+Requer Node.js 18+. Os scripts usam `cross-env`, então funcionam em Windows, Linux e macOS.
+
 ```bash
 npm ci
 npx playwright install chromium
 cp .env.example .env
 npm run test:e2e
 ```
+
+## Ambientes
+
+A URL é lida de `AUTOMATION_BASE_URL`. Para alternar entre ambientes, crie os arquivos a partir
+dos exemplos e use os scripts correspondentes:
+
+```bash
+cp .env.dev.example .env.dev
+cp .env.qa.example .env.qa
+npm run test:e2e:dev
+npm run test:e2e:qa
+```
+
+Cada script carrega o `.env` do ambiente via `DOTENV_CONFIG_PATH`, sem alterar o `.env` padrão.
+A estrutura é a mesma para qualquer ambiente; só muda a `AUTOMATION_BASE_URL` (e, se necessário,
+`HEADLESS`).
 
 Relatórios:
 - `results/cucumber-report.html`
@@ -116,3 +158,4 @@ capturar apenas em falhas ou em passos críticos, evitando volume desnecessário
 |---|---|
 | `AUTOMATION_BASE_URL` | `https://www.automationexercise.com` |
 | `HEADLESS` | `true` |
+| `DOTENV_CONFIG_PATH` | `.env` (definido pelos scripts de ambiente) |
