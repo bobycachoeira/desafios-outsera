@@ -5,40 +5,36 @@ Funcionalidade: Login na Automation Exercise
   Quero autenticar no sistema
   Para acessar minha conta
 
-  Cenário: Login válido
+  Esquema do Cenário: Login com cliente cadastrado
     Dado que existe um cliente na Automation Exercise
     Quando acesso a página de login da Automation Exercise
-    E informo o email e a senha do cliente
+    E informo o email do cliente e a senha "<senha>"
     E clico em login
-    Então devo ver o usuário autenticado
+    Então devo ter o resultado "<resultado>"
 
-  Cenário: Login com senha incorreta
-    Dado que existe um cliente na Automation Exercise
-    Quando acesso a página de login da Automation Exercise
-    E informo o email do cliente e a senha "senha-incorreta"
-    E clico em login
-    Então devo ver a mensagem "Your email or password is incorrect!"
+    Exemplos:
+      | senha            | resultado                                      |
+      | SENHA_DO_CLIENTE | autenticado                                    |
+      | senha-incorreta  | mensagem: Your email or password is incorrect! |
+      |                  | senha inválida                                 |
 
-  Cenário: Login com usuário inexistente
+  Esquema do Cenário: Login com email não cadastrado
     Quando acesso a página de login da Automation Exercise
-    E informo um email não cadastrado e a senha "teste123"
+    E informo um email não cadastrado e a senha "<senha>"
     E clico em login
-    Então devo ver a mensagem "Your email or password is incorrect!"
+    Então devo ter o resultado "<resultado>"
 
-  Cenário: Login com campos em branco
-    Quando acesso a página de login da Automation Exercise
-    E clico em login
-    Então devo permanecer na página de login da Automation Exercise
+    Exemplos:
+      | senha    | resultado                                      |
+      | teste123 | mensagem: Your email or password is incorrect! |
 
-  Cenário: Login com email em formato inválido
+  Esquema do Cenário: Login com dados inválidos
     Quando acesso a página de login da Automation Exercise
-    E informo o email "email-invalido" e a senha "teste123"
+    E informo o email "<email>" e a senha "<senha>"
     E clico em login
-    Então devo permanecer na página de login com o email inválido
+    Então devo ter o resultado "<resultado>"
 
-  Cenário: Login com senha em branco
-    Dado que existe um cliente na Automation Exercise
-    Quando acesso a página de login da Automation Exercise
-    E informo o email do cliente e deixo a senha em branco
-    E clico em login
-    Então devo permanecer na página de login com a senha inválida
+    Exemplos:
+      | email          | senha    | resultado           |
+      | email-invalido | teste123 | email inválido      |
+      |                |          | permanecer no login |
