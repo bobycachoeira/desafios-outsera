@@ -5,13 +5,14 @@
   "type": "module",
   "description": "Testes automatizados de API (Jest + Supertest) — Desafio Outsera.",
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand",
-    "test:positive": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand tests/positive",
-    "test:negative": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand tests/negative",
-    "test:report": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand --reporters=default --reporters=jest-html-reporters"
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --runInBand",
+    "test:positive": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --runInBand tests/positive",
+    "test:negative": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --runInBand tests/negative",
+    "test:report": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --runInBand --reporters=default --reporters=jest-html-reporters"
   },
   "devDependencies": {
     "@types/jest": "^29.5.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.0",
     "jest": "^29.7.0",
     "jest-html-reporters": "^3.1.7",
