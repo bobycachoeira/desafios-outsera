@@ -25,10 +25,11 @@ export class AutomationContactPage {
     await expect(this.submitButton).toBeVisible();
   }
 
-  async fillFormWithoutEmail() {
-    await this.name.fill('Cliente Automation');
-    await this.subject.fill('Teste de validação');
-    await this.message.fill('Mensagem de teste');
+  async fillForm(data) {
+    await this.name.fill(data.name);
+    await this.email.fill(data.email);
+    await this.subject.fill(data.subject);
+    await this.message.fill(data.message);
   }
 
   async submit() {

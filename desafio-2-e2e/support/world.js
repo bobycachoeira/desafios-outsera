@@ -1,4 +1,5 @@
 import { setWorldConstructor, World } from '@cucumber/cucumber';
+import { userData } from './factories.js';
 
 export class AutomationExerciseWorld extends World {
   constructor(options) {
@@ -9,27 +10,8 @@ export class AutomationExerciseWorld extends World {
 
   async createAutomationUser() {
     for (let attempt = 1; attempt <= 3; attempt += 1) {
-      const email = `ae.${Date.now()}.${Math.random().toString(16).slice(2, 8)}@example.com`;
-      const password = 'teste123';
-      const payload = new URLSearchParams({
-        name: 'Cliente Automation',
-        email,
-        password,
-        title: 'Mr',
-        birth_date: '1',
-        birth_month: '1',
-        birth_year: '1990',
-        firstname: 'Cliente',
-        lastname: 'Automation',
-        company: 'QA',
-        address1: 'Rua Teste 1',
-        address2: 'Apto 2',
-        country: 'India',
-        zipcode: '12345',
-        state: 'SP',
-        city: 'Sao Paulo',
-        mobile_number: '11999999999',
-      });
+      const customer = userData();
+      const payload = new URLSearchParams(customer);
 
       const response = await fetch(`${this.automationURL}/api/createAccount`, {
         method: 'POST',
@@ -45,7 +27,10 @@ export class AutomationExerciseWorld extends World {
       }
 
       if (body?.responseCode === 201) {
-        this.automationUser = { email, password };
+        this.automationUser = {
+          email: customer.email,
+          password: customer.password,
+        };
         this.automationUsersToDelete.push(this.automationUser);
         return this.automationUser;
       }

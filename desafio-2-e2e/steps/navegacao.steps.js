@@ -1,5 +1,6 @@
 import { Then, When } from '@cucumber/cucumber';
 import { AutomationContactPage } from '../pages/AutomationContactPage.js';
+import { contactData } from '../support/factories.js';
 
 When('acesso o formulário de contato', async function () {
   this.automationContactPage = new AutomationContactPage(this.page, this.automationURL);
@@ -11,7 +12,7 @@ Then('devo ver os campos do formulário de contato', async function () {
 });
 
 When('preencho nome, assunto e mensagem sem email', async function () {
-  await this.automationContactPage.fillFormWithoutEmail();
+  await this.automationContactPage.fillForm(contactData({ email: '' }));
 });
 
 When('clico em enviar', async function () {
