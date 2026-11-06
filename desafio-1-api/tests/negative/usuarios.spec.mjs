@@ -3,7 +3,11 @@ import { api } from '../../helpers/api-client.mjs';
 import { login } from '../../helpers/auth.api.mjs';
 import { createSession } from '../../helpers/session.mjs';
 import { createUser, deleteUser, getUser } from '../../helpers/users.api.mjs';
-import { customerData, uniqueEmail } from '../fixtures/factories.mjs';
+import {
+  customerData,
+  requiredUserFields,
+  uniqueEmail,
+} from '../fixtures/factories.mjs';
 
 describe('Usuários — cenários negativos', () => {
   let customerSession;
@@ -26,7 +30,7 @@ describe('Usuários — cenários negativos', () => {
     expect(response.body.message).toBe('Este email já está sendo usado');
   });
 
-  test('POST /usuarios valida campos obrigatórios', async () => {
+  test('POST /usuarios retorna todas as mensagens quando o corpo está vazio', async () => {
     const response = await createUser({});
 
     expectJsonResponse(response, 400);
@@ -37,6 +41,19 @@ describe('Usuários — cenários negativos', () => {
       administrador: 'administrador é obrigatório',
     });
   });
+
+  test.each(requiredUserFields)(
+    'POST /usuarios exige o campo $field',
+    async ({ field, message }) => {
+      const payload = customerData();
+      delete payload[field];
+
+      const response = await createUser(payload);
+
+      expectJsonResponse(response, 400);
+      expect(response.body[field]).toBe(message);
+    }
+  );
 
   test('POST /usuarios recusa JSON malformado', async () => {
     const response = await api
