@@ -1,6 +1,7 @@
 import { Then, When } from '@cucumber/cucumber';
 import { AutomationCheckoutPage } from '../pages/AutomationCheckoutPage.js';
 import { AutomationProductsPage } from '../pages/AutomationProductsPage.js';
+import { paymentData } from '../support/factories.js';
 
 When('adiciono um produto ao carrinho', async function () {
   this.automationProductsPage = new AutomationProductsPage(this.page, this.automationURL);
@@ -22,20 +23,32 @@ When('clico em place order', async function () {
   await this.automationCheckoutPage.placeOrder();
 });
 
-When('preencho os dados de pagamento e confirmo o pedido', async function () {
-  await this.automationCheckoutPage.payWithValidData();
+When('preencho os dados de pagamento {string}', async function (tipo) {
+  switch (tipo) {
+    case 'válidos':
+      return this.automationCheckoutPage.fillPayment(paymentData());
+    case 'sem o número do cartão':
+      return this.automationCheckoutPage.fillPayment(paymentData({ cardNumber: '' }));
+    case 'vazios':
+      return;
+    default:
+      throw new Error(`Dados de pagamento não mapeados: ${tipo}`);
+  }
 });
 
-Then('devo ver a confirmação do pedido', async function () {
-  await this.page.getByText('Congratulations! Your order has been confirmed!').waitFor();
+When('confirmo o pagamento', async function () {
+  await this.automationCheckoutPage.submitPayment();
 });
 
-When('tento confirmar o pedido sem preencher os dados de pagamento', async function () {
-  await this.automationCheckoutPage.tryToPayWithoutData();
-});
-
-Then('devo permanecer na página de pagamento', async function () {
-  await this.page.waitForURL(/\/payment$/);
+Then('devo ter o resultado do pagamento {string}', async function (resultado) {
+  switch (resultado) {
+    case 'confirmação do pedido':
+      return this.automationCheckoutPage.expectConfirmation();
+    case 'permanecer no pagamento':
+      return this.automationCheckoutPage.expectStillOnPaymentPage();
+    default:
+      throw new Error(`Resultado de pagamento não mapeado: ${resultado}`);
+  }
 });
 
 When('acesso o carrinho vazio', async function () {
@@ -49,8 +62,4 @@ Then('devo ver o carrinho vazio', async function () {
 
 Then('não devo ver a opção de checkout', async function () {
   await this.automationProductsPage.expectCheckoutUnavailable();
-});
-
-When('preencho os dados de pagamento sem o número do cartão', async function () {
-  await this.automationCheckoutPage.payWithoutCardNumber();
 });

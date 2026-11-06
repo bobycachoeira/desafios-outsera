@@ -31,41 +31,25 @@ export class AutomationCheckoutPage {
     await expect(this.page).toHaveURL(/\/payment$/);
   }
 
-  async payWithValidData(data = {}) {
-    const payment = {
-      name: 'AE User',
-      cardNumber: '4111111111111111',
-      cvc: '123',
-      expiryMonth: '12',
-      expiryYear: '2030',
-      ...data,
-    };
-
+  async fillPayment(payment) {
     await this.nameOnCard.fill(payment.name);
     await this.cardNumber.fill(payment.cardNumber);
     await this.cvc.fill(payment.cvc);
     await this.expiryMonth.fill(payment.expiryMonth);
     await this.expiryYear.fill(payment.expiryYear);
-    await this.payButton.click();
+  }
 
+  async submitPayment() {
+    await this.payButton.click();
+  }
+
+  async expectConfirmation() {
     await expect(this.confirmation).toBeVisible({ timeout: 30000 });
   }
 
-  async tryToPayWithoutData() {
-    await this.payButton.click();
+  async expectStillOnPaymentPage() {
     await expect(this.page).toHaveURL(/\/payment$/);
     await expect(this.cardNumber).toBeVisible();
-    expect(await this.cardNumber.evaluate((element) => element.checkValidity())).toBe(false);
-  }
-
-  async payWithoutCardNumber() {
-    await this.nameOnCard.fill('AE User');
-    await this.cvc.fill('123');
-    await this.expiryMonth.fill('12');
-    await this.expiryYear.fill('2030');
-    await this.payButton.click();
-
-    await expect(this.page).toHaveURL(/\/payment$/);
     expect(await this.cardNumber.evaluate((element) => element.checkValidity())).toBe(false);
   }
 }
