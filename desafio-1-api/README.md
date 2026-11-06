@@ -75,7 +75,7 @@ próprio caso.
 
 ## Como executar
 
-Requer Node.js 18+. Os scripts usam `cross-env`, então funcionam em Windows, Linux e macOS.
+Requer Node.js 18+.
 
 ```bash
 npm ci
@@ -86,6 +86,23 @@ npm test
 O relatório HTML é gerado em `results/report.html`.
 
 Resultado atual: **33 testes passando**.
+
+### Compatibilidade com Windows
+
+Os scripts npm usam `cross-env`, então `npm test`, `npm run test:dev` e `npm run test:qa` funcionam
+normalmente no **PowerShell** e no **cmd** — não é mais necessário definir `NODE_OPTIONS` na mão.
+
+O único ponto de atenção é o comando `cp` dos exemplos, que é de shell POSIX. No Windows, use o
+equivalente:
+
+```powershell
+Copy-Item .env.example .env
+Copy-Item .env.dev.example .env.dev
+Copy-Item .env.qa.example .env.qa
+```
+
+Ou execute os passos pelo **Git Bash/WSL**. Alternativamente, pode pular a cópia do `.env`: o
+cliente usa `https://serverest.dev` como valor padrão quando `API_BASE_URL` não está definida.
 
 ## Ambientes
 
